@@ -9,7 +9,7 @@
 			content="WDD 131 - Dynamic Web Fundamentals, Sam Bonfanti, Dynamic Web Fundamentals class page"
 		/>
 		<meta name="author" content="Sam Bonfanti" />
-		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/base.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -23,49 +23,67 @@
 			<h1>WDD 131: Dynamic Web Fundamentals - Sam Bonfanti</h1>
 			<nav>
 				<ul>
-					<li><a href="#">LinkedIn</a></li>
-					<li><a href="#">Canvas</a></li>
-					<li><a href="#">Scripture</a></li>
-					<li><a href="#">Final Project</a></li>
+					<li><a href="https://www.linkedin.com/in/sambonfanti/" target="_blank">LinkedIn</a></li>
+					<li><a href="https://byupw.instructure.com" target="_blank">Canvas</a></li>
+					<li>
+						<a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3.7" target="_blank">
+							Favorite Scripture
+						</a>
+					</li>
+					<li><a href="#" target="_blank">Final Project</a></li>
 				</ul>
 			</nav>
 		</header>
-		<main>
-			<section class="card">
-				<p>
-					I am a student at BYU-Idaho. I am a software engineering major. I am from Utah. I am a member of the Church of
-					Jesus Christ of Latter-day Saints.
+		<div class="content-wrapper">
+			<main class="main">
+				<section class="card card--horizontal">
+					<div class="card__content">
+						<p>
+							I am a student at BYU-Idaho. I am a software engineering major. I have been a Full Stack Developer for 3
+							years now. I am from Italy. I am a member of the Church of Jesus Christ of Latter-day Saints. I live in
+							Arizona. I am passionate about web development and enjoy learning new technologies. In my free time, I
+							like hiking, spend time with my family, and playing the games. I am also involved in community service and
+							enjoy helping others.
+						</p>
+					</div>
+					<div class="card__image-container">
+						<img src="images/profile.webp" alt="Profile Picture" class="card__image" />
+					</div>
+				</section>
+				<section class="card card--horizontal card--image-left">
+					<div class="card__image-container"><img src="images/italy.webp" alt="Italy" class="card__image" /></div>
+					<div class="card__content">
+						<h2>Florence, Italy</h2>
+						<p>
+							Italy is a beautiful Country with a rich history and culture. Italy is known for its delicious food,
+							beautiful art, and historical sites. it is also known for its beautiful landscapes and beaches. Italy is a
+							popular tourist destination, with millions of people visiting each year to experience its beauty and
+							charm.
+						</p>
+					</div>
+				</section>
+			</main>
+			<aside class="aside">
+				<h2 class="aside__title">Web Dev Resources</h2>
+				<ul class="aside__list">
+					<li class="aside__list-item"><a href="#" class="aside__link">Dev.to Community</a></li>
+					<li class="aside__list-item"><a href="#" class="aside__link">Smashing Magazine</a></li>
+					<li class="aside__list-item"><a href="#" class="aside__link">CSS Tricks</a></li>
+					<li class="aside__list-item"><a href="#" class="aside__link">W3 Schools</a></li>
+					<li class="aside__list-item"><a href="#" class="aside__link">Udemy</a></li>
+					<li class="aside__list-item"><a href="#" class="aside__link">Image Placeholder</a></li>
+				</ul>
+			</aside>
+		</div>
+		<footer class="footer">
+			<div class="footer__content">
+				<p class="footer__copyright">
+					&copy;
+					<span id="currentyear"></span>
+					- Sam Bonfanti - Italy
 				</p>
-				<img src="images/profile.jpg" alt="Profile Picture" />
-			</section>
-			<section class="card">
-				<h2>Florence, Italy</h2>
-				<img src="images/italy.jpg" alt="Italy" />
-				<p>
-					Italy is a beautiful Country with a rich history and culture. Italy is known for its delicious food, beautiful
-					art, and historical sites. it is also known for its beautiful landscapes and beaches. Italy is a popular
-					tourist destination, with millions of people visiting each year to experience its beauty and charm.
-				</p>
-			</section>
-		</main>
-		<aside>
-			<h2>Web Dev Resources</h2>
-			<ul>
-				<li><a href="#">Dev.to Community</a></li>
-				<li><a href="#">Smashing Magazine</a></li>
-				<li><a href="#">CSS Tricks</a></li>
-				<li><a href="#">W3 Schools</a></li>
-				<li><a href="#">Udemy</a></li>
-				<li><a href="#">Image Placeholder</a></li>
-			</ul>
-		</aside>
-		<footer>
-			<p>
-				&copy;
-				<span id="currentyear"></span>
-				- Sam Bonfanti - Italy
-			</p>
-			<p id="lastmodified"></p>
+				<p id="lastmodified" class="footer__modified"></p>
+			</div>
 		</footer>
 	</body>
 </html>
