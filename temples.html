@@ -6,31 +6,31 @@
 		<title>WDD 131 - Temple Album - Sam Bonfanti</title>
 		<meta name="description" content="WDD 131 – this is a page to display temples and their information" />
 		<meta name="author" content="Sam Bonfanti" />
-		<link rel="stylesheet" href="styles/temples.css" />
-		<link rel="stylesheet" href="styles/temples-large.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:400;700&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="stylesheet" href="../styles/temples.css" />
+		<link rel="stylesheet" href="../styles/temples-large.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<script src="scripts/temples.js" defer></script>
 	</head>
 	<body>
 		<header>
 			<p>Temple Album</p>
-			<nav>
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Old</a></li>
-					<li><a href="#">New</a></li>
-					<li><a href="#">Large</a></li>
-					<li><a href="#">Small</a></li>
+			<div class="hamburger-menu">
+				<button id="menu" aria-label="Toggle navigation menu"></button>
+			</div>
+			<nav class="nav">
+				<ul class="nav__list">
+					<li class="nav__item"><a class="nav__link" href="#">Home</a></li>
+					<li class="nav__item"><a class="nav__link" href="#">Old</a></li>
+					<li class="nav__item"><a class="nav__link" href="#">New</a></li>
+					<li class="nav__item"><a class="nav__link" href="#">Large</a></li>
+					<li class="nav__item"><a class="nav__link" href="#">Small</a></li>
 				</ul>
 			</nav>
 		</header>
 		<main>
-			<h1></h1>
+			<h1>Home</h1>
 			<figure>
 				<img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple" />
 				<figcaption>Salt Lake Temple</figcaption>
