@@ -145,7 +145,7 @@ main {
   margin: 0 auto;
 }
 
-main h1 {
+main h2 {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: var(--heading-font);
