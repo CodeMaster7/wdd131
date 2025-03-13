@@ -2,6 +2,8 @@
   LARGE SCREEN STYLES
 ===========================================*/
 @media screen and (min-width: 768px) {
+
+  /* Hide hamburger menu on larger screens */
   .hamburger-menu {
     display: none;
   }
@@ -9,36 +11,36 @@
   /*===========================================
     HEADER STYLES
   ===========================================*/
-  .header {
+  header {
     padding: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .header p {
-    font-size: 1.5rem;
+  header p {
+    font-size: 2rem;
     font-weight: bold;
     font-family: var(--heading-font);
   }
 
   /* Navigation Styles */
-  .nav__list {
-    border-top: none;
-    margin-right: 50px;
-    font-size: 1rem;
-  }
-
-  .nav__link {
-    padding: 0.5rem 0;
-  }
-
   .nav {
+    display: block;
     position: static;
     max-height: none;
     width: auto;
     background-color: transparent;
+    overflow: visible;
+    z-index: 1;
   }
 
   .nav__list {
     display: flex;
+    flex-direction: row;
+    border-top: none;
+    margin-right: 2rem;
+    font-size: 1.1rem;
   }
 
   .nav__item {
@@ -47,7 +49,13 @@
   }
 
   .nav__link {
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-bottom: none;
+    color: var(--secondary-color);
+  }
+
+  .nav__link:hover {
+    color: var(--accent-color);
   }
 
   /*===========================================
@@ -66,6 +74,7 @@
   main h1 {
     grid-column: 1 / -1;
     width: 100%;
+    font-size: 2.5rem;
     margin-bottom: 2rem;
   }
 
@@ -78,6 +87,7 @@
 
   main figure:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
 
   main figure img {
@@ -86,5 +96,10 @@
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  main figure figcaption {
+    font-size: 1rem;
+    margin-top: 0.8rem;
   }
 }
