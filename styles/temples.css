@@ -63,21 +63,6 @@ header p {
   font-family: var(--heading-font);
 }
 
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: var(--spacing-md);
-}
-
-header nav ul li a {
-  color: var(--secondary-color);
-  text-decoration: none;
-}
-
-header nav ul li a:hover {
-  color: var(--accent-color);
-}
-
 /* Hamburger Menu Styles */
 .hamburger-menu {
   display: block;
@@ -90,7 +75,7 @@ header nav ul li a:hover {
   cursor: pointer;
   font-size: 2.5rem;
   line-height: 1;
-  color: #333;
+  color: var(--secondary-color);
 }
 
 #menu::before {
@@ -101,10 +86,11 @@ header nav ul li a:hover {
   content: "x";
 }
 
-/* Navigation Styles */
+/* Navigation Styles - Mobile First */
 .nav {
   position: absolute;
   top: 100%;
+  left: 0;
   right: 0;
   background-color: #f8f8f8;
   width: 100%;
@@ -112,10 +98,12 @@ header nav ul li a:hover {
   overflow: hidden;
   transition: max-height 0.3s ease;
   z-index: 90;
+  display: none;
 }
 
 .nav.nav--open {
   max-height: 300px;
+  display: block;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -124,19 +112,24 @@ header nav ul li a:hover {
   padding: 0;
   margin: 0;
   border-top: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .nav__link {
   display: block;
   padding: 1rem;
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   transition: background-color 0.2s ease;
+  border-bottom: 1px solid #eee;
 }
 
 .nav__link:hover,
 .nav__link:focus {
-  background-color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 /*===========================================
