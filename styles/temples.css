@@ -127,8 +127,8 @@ header p {
   border-bottom: 1px solid #eee;
 }
 
-.nav__link:hover,
-.nav__link:focus {
+a:hover,
+a:focus {
   color: var(--accent-color);
 }
 
