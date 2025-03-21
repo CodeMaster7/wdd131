@@ -3,131 +3,131 @@
 ===========================================*/
 @media screen and (min-width: 1024px) {
 
-    /*===========================================
+  /*===========================================
     HEADER STYLES
   ===========================================*/
-    header {
-        padding: var(--spacing-lg);
-    }
+  header {
+    padding: var(--spacing-lg);
+  }
 
-    header h1 {
-        font-size: 2.5rem;
-    }
+  header h1 {
+    font-size: 2.5rem;
+  }
 
-    /*===========================================
+  /*===========================================
     MAIN LAYOUT - Position data and weather on top of hero
   ===========================================*/
-    main {
-        padding: 0;
-        display: block;
-        position: relative;
-        height: auto;
-        min-height: var(--min-content-height);
-    }
+  main {
+    padding: 0;
+    display: block;
+    position: relative;
+    height: auto;
+    min-height: var(--min-content-height);
+  }
 
-    /* Hero Section */
-    .hero {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        /* Change to relative positioning */
-    }
+  /* Hero Section */
+  .hero {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* Change to relative positioning */
+  }
 
-    /* For large screens - maintain aspect ratio while filling container */
-    .hero__image {
-        width: 100%;
-        height: 100%;
-        min-height: var(--min-content-height);
-        object-fit: cover;
-        display: block;
-    }
+  /* For large screens - maintain aspect ratio while filling container */
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    min-height: var(--min-content-height);
+    object-fit: cover;
+    display: block;
+  }
 
-    /* Data Section - Top left */
-    .data {
-        position: absolute;
-        top: var(--spacing-lg);
-        left: var(--spacing-lg);
-        width: var(--panel-width-desktop);
-        max-width: var(--panel-max-width);
-        z-index: 1;
-        background-color: var(--bg-white-90);
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
-        border: var(--border-strong);
-        padding: var(--spacing-md);
-    }
+  /* Data Section - Top left */
+  .data {
+    position: absolute;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+    width: var(--panel-width-desktop);
+    max-width: var(--panel-max-width);
+    z-index: 1;
+    background-color: var(--bg-white-90);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: var(--border-strong);
+    padding: var(--spacing-md);
+  }
 
-    .data__title {
-        border-bottom: var(--border-medium);
-        color: var(--royal-blue);
-    }
+  .data__title {
+    border-bottom: var(--border-medium);
+    color: var(--royal-blue);
+  }
 
-    .data__label {
-        color: var(--royal-blue);
-    }
+  .data__label {
+    color: var(--royal-blue);
+  }
 
-    /* Weather Section - Bottom right */
-    .weather {
-        position: absolute;
-        bottom: var(--spacing-lg);
-        right: var(--spacing-lg);
-        width: var(--panel-width-desktop);
-        max-width: var(--panel-max-width);
-        z-index: 1;
-        background-color: var(--bg-white-90);
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
-        border: var(--border-strong);
-        padding: var(--spacing-md);
-    }
+  /* Weather Section - Bottom right */
+  .weather {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    width: var(--panel-width-desktop);
+    max-width: var(--panel-max-width);
+    z-index: 1;
+    background-color: var(--bg-white-90);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: var(--border-strong);
+    padding: var(--spacing-md);
+  }
 
-    .weather__title {
-        border-bottom: var(--border-medium);
-        color: var(--royal-blue);
-    }
+  .weather__title {
+    border-bottom: var(--border-medium);
+    color: var(--royal-blue);
+  }
 
-    .weather__label {
-        color: var(--royal-blue);
-    }
+  .weather__label {
+    color: var(--royal-blue);
+  }
 
-    /* Hide the actual weather icon in large view */
-    .weather__icon-container {
-        display: none;
-    }
+  /* Hide the actual weather icon in large view */
+  .weather__icon-container {
+    display: none;
+  }
 
-    /* Use pseudo-element for weather icon in large view */
-    .weather__title::after {
-        content: "⛅";
-        display: inline-block;
-        margin-left: var(--spacing-sm);
-        font-size: var(--icon-size-small);
-    }
+  /* Use pseudo-element for weather icon in large view */
+  .weather__title::after {
+    content: "⛅";
+    display: inline-block;
+    margin-left: var(--spacing-sm);
+    font-size: var(--icon-size-small);
+  }
 
-    /* Increase the weather icon size */
-    .weather__title::after {
-        font-size: var(--icon-size-medium);
-    }
+  /* Increase the weather icon size */
+  .weather__title::after {
+    font-size: var(--icon-size-medium);
+  }
 }
 
 /*===========================================
   VERY LARGE SCREEN STYLES (1600px and up)
 ===========================================*/
 @media screen and (min-width: 1600px) {
-    main {
-        max-width: 100%;
-    }
+  main {
+    max-width: 100%;
+  }
 
-    /* Data Section - adjust size for larger screens */
-    .data {
-        width: 25%;
-        max-width: var(--panel-large-max-width);
-        padding: var(--spacing-lg);
-    }
+  /* Data Section - adjust size for larger screens */
+  .data {
+    width: 25%;
+    max-width: var(--panel-large-max-width);
+    padding: var(--spacing-lg);
+  }
 
-    /* Weather Section - adjust size for larger screens */
-    .weather {
-        width: 25%;
-        max-width: var(--panel-large-max-width);
-        padding: var(--spacing-lg);
-    }
+  /* Weather Section - adjust size for larger screens */
+  .weather {
+    width: 25%;
+    max-width: var(--panel-large-max-width);
+    padding: var(--spacing-lg);
+  }
 }
