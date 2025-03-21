@@ -1,0 +1,231 @@
+/*===========================================
+  MOBILE STYLES
+===========================================*/
+
+/* Root variables for consistent styling */
+:root {
+  /* Color palette from provided values */
+  --royal-blue: #062b67ff;
+  --cardinal: #d21044ff;
+  --platinum: #e7e4e7ff;
+
+  /* Typography */
+  --heading-font: 'Merriweather', serif;
+  --body-font: 'Open Sans', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Borders and Shadows */
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --border-light: 1px solid #eee;
+  --border-medium: 2px solid var(--cardinal);
+  --border-strong: 2px solid var(--royal-blue);
+
+  /* Background Colors with Alpha */
+  --bg-white-90: rgba(255, 255, 255, 0.9);
+
+  /* Dimensions */
+  --panel-width-mobile: 100%;
+  --panel-width-desktop: 30%;
+  --panel-max-width: 350px;
+  --panel-large-max-width: 450px;
+
+  /* Heights */
+  --min-content-height: calc(100vh - 200px);
+
+  /* Icon Sizes */
+  --icon-size-small: 1.5rem;
+  --icon-size-medium: 1.8rem;
+  --icon-size-large: 80px;
+}
+
+/*===========================================
+  RESET AND BASE STYLES
+===========================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/*===========================================
+  HEADER STYLES
+===========================================*/
+
+header {
+  background-color: var(--cardinal);
+  color: white;
+  padding: var(--spacing-md);
+  text-align: center;
+  border-bottom: 5px solid var(--royal-blue);
+}
+
+header h1 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/*===========================================
+  MAIN STYLES
+===========================================*/
+
+main {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+/* Hero Section */
+.hero {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+/* Hero image */
+.hero__image {
+  width: 100%;
+  /* Make image responsive */
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Data Section */
+.data {
+  background-color: white;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg);
+  margin-bottom: 0;
+  border-bottom: var(--border-light);
+}
+
+.data__title {
+  font-family: var(--heading-font);
+  color: var(--royal-blue);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: var(--spacing-sm);
+}
+
+.data__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.data__item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-xs) 0;
+  border-bottom: var(--border-light);
+}
+
+.data__label {
+  font-weight: 600;
+  color: #333;
+}
+
+.data__value {
+  text-align: right;
+}
+
+/* Weather Section */
+.weather {
+  background-color: white;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg);
+  margin-bottom: 0;
+}
+
+.weather__title {
+  font-family: var(--heading-font);
+  color: var(--royal-blue);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: var(--spacing-sm);
+}
+
+.weather__icon-container {
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing-md) 0;
+}
+
+.weather__icon {
+  width: var(--icon-size-large);
+  height: var(--icon-size-large);
+  display: block;
+}
+
+.weather__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.weather__item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-xs) 0;
+  border-bottom: var(--border-light);
+}
+
+.weather__label {
+  font-weight: 600;
+  color: #333;
+}
+
+.weather__value {
+  text-align: right;
+}
+
+/*===========================================
+  FOOTER STYLES
+===========================================*/
+
+.footer {
+  background-color: var(--cardinal);
+  color: white;
+  padding: var(--spacing-md);
+  text-align: center;
+  border-top: 5px solid var(--royal-blue);
+  margin-top: auto;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.footer__copyright,
+.footer__modified {
+  font-size: 0.9rem;
+}
