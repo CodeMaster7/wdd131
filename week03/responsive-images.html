@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WDD 131 - Responsive Images - Sam Bonfanti</title>
+		<meta name="description" content="WDD 131 – this is a page to display responsive images" />
+		<meta name="author" content="Sam Bonfanti" />
+		<link rel="stylesheet" href="styles/responsive-images.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Responsive Images</h1>
+		</header>
+		<main>
+			<div class="hero">
+				<picture>
+					<source media="(min-width: 1000px)" srcset="images/hero-large.webp" />
+					<source media="(min-width: 500px)" srcset="images/hero-medium.webp" />
+					<img src="images/hero-small.webp" alt="Hero Image" width="500" height="250"/>
+				</picture>
+			</div>
+		</main>
+	</body>
+</html>
