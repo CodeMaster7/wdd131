@@ -65,7 +65,7 @@ const temples = [
 		location: 'Laie, Hawaii, United States',
 		dedicated: '1919, November, 27-30',
 		area: 42100,
-		imageUrl: '../images/laie-temple.webp'
+		imageUrl: '../images/laie-temple-exterior.webp'
 	},
 	{
 		templeName: 'Bern Switzerland',
