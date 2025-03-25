@@ -1,0 +1,260 @@
+/*===========================================
+  CSS VARIABLES
+===========================================*/
+:root {
+  /* Colors */
+  --color-accent-gradient-1: #FFC593;
+  --color-accent-gradient-2: #BC7198;
+  --color-accent-gradient-3: #5A77FF;
+  --color-black: #000000;
+  --color-light-grey: #DFDFDF;
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-primary: 'DM Sans', sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.5rem;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  --spacing-xxxl: 4rem;
+
+  /* Borders */
+  --border-radius: 8px;
+  --border-width: 1px;
+  --border-color: var(--color-light-grey);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-default: 0.3s ease;
+}
+
+/*===========================================
+  RESET & BASE STYLES
+===========================================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BEM naming convention used throughout */
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--color-black);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+/*===========================================
+  TYPOGRAPHY
+===========================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--spacing-xl);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  margin-top: var(--spacing-xxl);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+/*===========================================
+  SECTION LAYOUTS
+===========================================*/
+section {
+  margin-bottom: var(--spacing-xxxl);
+}
+
+/*===========================================
+  COLOR SCHEMA SECTION
+===========================================*/
+.colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.color-sample {
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  color: var(--color-black);
+}
+
+.color-sample p {
+  font-size: var(--font-size-sm);
+}
+
+.main-accent {
+  background: linear-gradient(45deg,
+      var(--color-accent-gradient-1),
+      var(--color-accent-gradient-2),
+      var(--color-accent-gradient-3));
+  color: var(--color-white);
+}
+
+.pure-black {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.light-grey {
+  background-color: var(--color-light-grey);
+}
+
+.pure-white {
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--border-color);
+}
+
+/*===========================================
+  TYPOGRAPHY SECTION
+===========================================*/
+.font-samples {
+  margin-top: var(--spacing-xl);
+}
+
+.font-sample {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.font-usage {
+  font-weight: 700;
+  margin-top: var(--spacing-md);
+}
+
+/*===========================================
+  LIST STYLES
+===========================================*/
+ul {
+  list-style-position: inside;
+  margin-bottom: var(--spacing-md);
+}
+
+li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/*===========================================
+  WIREFRAMES SECTION
+===========================================*/
+.wireframe-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.mobile-wireframe,
+.desktop-wireframe {
+  padding: var(--spacing-xl);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  text-align: left;
+  box-shadow: var(--shadow-md);
+}
+
+.mobile-wireframe:hover,
+.desktop-wireframe:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.wireframe__figure {
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.wireframe__image {
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--border-radius) - 2px);
+  margin-bottom: var(--spacing-xs);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.wireframe__image:hover {
+  transform: none;
+}
+
+.wireframe__caption {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: var(--spacing-sm);
+}
+
+.wireframe__details {
+  margin-top: var(--spacing-md);
+}
+
+.wireframe__features {
+  list-style-type: disc;
+  padding-left: var(--spacing-lg);
+  margin: var(--spacing-xs) 0 var(--spacing-md);
+}
+
+.wireframe__features li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/*===========================================
+  LINK STYLES
+===========================================*/
+.wireframe__link {
+  color: var(--color-accent-gradient-3);
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+
+/*===========================================
+  FOOTER STYLES
+===========================================*/
+footer {
+  margin-top: var(--spacing-xxxl);
+  padding: var(--spacing-md);
+  text-align: center;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
