@@ -7,11 +7,13 @@
   --color-accent-gradient-2: #BC7198;
   --color-accent-gradient-3: #5A77FF;
   /* Darker accent blue with better contrast */
-  --color-accent-accessible: #4A67FF;
+  --color-accent-accessible: #3850d0;
   --color-black: #000000;
   --color-light-grey: #DFDFDF;
   /* Darker grey for better text contrast */
-  --color-dark-grey: #606060;
+  --color-dark-grey: #474747;
+  /* Even darker grey for maximum contrast */
+  --color-very-dark-grey: #333333;
   --color-white: #FFFFFF;
 
   /* Typography */
@@ -35,7 +37,7 @@
   /* Borders */
   --border-radius: 8px;
   --border-width: 1px;
-  --border-color: var(--color-light-grey);
+  --border-color: var(--color-dark-grey);
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -126,6 +128,7 @@ section {
 
 .color-sample p {
   font-size: var(--font-size-sm);
+  font-weight: bold;
 }
 
 .main-accent {
@@ -144,12 +147,14 @@ section {
 .light-grey {
   background-color: var(--color-light-grey);
   /* Ensure text has good contrast against light grey background */
-  color: var(--color-dark-grey);
+  color: var(--color-very-dark-grey);
+  border: var(--border-width) solid var(--color-dark-grey);
 }
 
 .pure-white {
   background-color: var(--color-white);
-  border: var(--border-width) solid var(--border-color);
+  border: var(--border-width) solid var(--color-dark-grey);
+  color: var(--color-very-dark-grey);
 }
 
 /*===========================================
@@ -252,14 +257,9 @@ li {
 .wireframe__link {
   /* Use the darker, more accessible blue for better contrast */
   color: var(--color-accent-accessible);
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: 700;
   display: inline-block;
-  border-bottom: 2px solid transparent;
-}
-
-.wireframe__link:hover {
-  border-color: var(--color-accent-accessible);
 }
 
 /*===========================================
@@ -280,4 +280,5 @@ footer {
   font-size: var(--font-size-base);
   line-height: 1.5;
   margin-bottom: var(--spacing-xs);
+  font-weight: 500;
 }
