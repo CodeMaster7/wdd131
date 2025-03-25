@@ -6,8 +6,12 @@
   --color-accent-gradient-1: #FFC593;
   --color-accent-gradient-2: #BC7198;
   --color-accent-gradient-3: #5A77FF;
+  /* Darker accent blue with better contrast */
+  --color-accent-accessible: #4A67FF;
   --color-black: #000000;
   --color-light-grey: #DFDFDF;
+  /* Darker grey for better text contrast */
+  --color-dark-grey: #606060;
   --color-white: #FFFFFF;
 
   /* Typography */
@@ -62,6 +66,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--spacing-xl);
+  background-color: var(--color-white);
 }
 
 /*===========================================
@@ -138,6 +143,8 @@ section {
 
 .light-grey {
   background-color: var(--color-light-grey);
+  /* Ensure text has good contrast against light grey background */
+  color: var(--color-dark-grey);
 }
 
 .pure-white {
@@ -221,6 +228,8 @@ li {
   font-size: 0.9rem;
   line-height: 1.5;
   margin-top: var(--spacing-sm);
+  /* Ensure caption text has good contrast */
+  color: var(--color-black);
 }
 
 .wireframe__details {
@@ -241,11 +250,16 @@ li {
   LINK STYLES
 ===========================================*/
 .wireframe__link {
-  color: var(--color-accent-gradient-3);
+  /* Use the darker, more accessible blue for better contrast */
+  color: var(--color-accent-accessible);
   text-decoration: none;
   font-weight: 700;
   display: inline-block;
   border-bottom: 2px solid transparent;
+}
+
+.wireframe__link:hover {
+  border-color: var(--color-accent-accessible);
 }
 
 /*===========================================
@@ -257,4 +271,13 @@ footer {
   text-align: center;
   background-color: var(--color-black);
   color: var(--color-white);
+}
+
+/* Ensure footer text has sufficient contrast */
+.footer__copyright,
+.footer__modified {
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-xs);
 }
