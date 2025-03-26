@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>WDD 131 - Product Review Form - Sam Bonfanti</title>
 		<meta name="description" content="WDD 131 – this is a page to review a product from a company. It is a simple form that allows the user to review a product from a company.">
-		<meta name="author" content="Sam Bonfanti" >
+		<meta name="author" content="Sam Bonfanti">
 		<!-- ======================================================================
 		     STYLESHEETS AND FONTS
-		     ====================================================================== -->
+		====================================================================== -->
 		<!-- External CSS Stylesheet -->
 		<link rel="stylesheet" href="styles/form.css">
 		<!-- Google Fonts - DM Sans -->
@@ -17,27 +17,25 @@
 		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap" rel="stylesheet">
 		<!-- ======================================================================
 		     SCRIPTS
-		     ====================================================================== -->
+		====================================================================== -->
 		<!-- JavaScript for Form Functionality -->
 		<script src="scripts/form.js" defer></script>
 	</head>
 	<body>
 		<!-- ======================================================================
 		     HEADER
-		     ====================================================================== -->
-		<header>
-			<h1>Product Review Form</h1>
-		</header>
+		====================================================================== -->
+		<header><h1>Product Review Form</h1></header>
 		<!-- ======================================================================
 		     MAIN CONTENT
-		     ====================================================================== -->
+		====================================================================== -->
 		<main>
 			<!-- Main Form Section -->
 			<section class="form-section">
 				<h2>Review a product</h2>
 				<!-- ======================================================================
 				     PRODUCT REVIEW FORM
-				     ====================================================================== -->
+				====================================================================== -->
 				<form method="get" action="review.html" class="review-form">
 					<p class="form-note">
 						<span class="required-indicator">*</span>
@@ -45,8 +43,12 @@
 					</p>
 					<!-- ======================================================================
 					     PRODUCT SELECTION
-					     ====================================================================== -->
-					<div class="form-group">
+					====================================================================== -->
+					<fieldset>
+						<legend>
+							Product Information
+							<span class="required-indicator">*</span>
+						</legend>
 						<label for="product">
 							Product Name:
 							<span class="required-indicator">*</span>
@@ -56,15 +58,15 @@
 							<option value="" disabled selected>Select a Product ...</option>
 							<!-- Product options will be populated by JavaScript -->
 						</select>
-					</div>
+					</fieldset>
 					<!-- ======================================================================
 					     RATING SELECTION
-					     ====================================================================== -->
-					<div class="form-group">
-						<p>
-							Overall Rating:
+					====================================================================== -->
+					<fieldset>
+						<legend>
+							Overall Rating
 							<span class="required-indicator">*</span>
-						</p>
+						</legend>
 						<div class="rating">
 							<input type="radio" id="star5" name="rating" value="5">
 							<label for="star5">☆</label>
@@ -78,21 +80,26 @@
 							<label for="star1">☆</label>
 						</div>
 						<small class="rating-help-text">Please select a rating (required)</small>
-					</div>
+					</fieldset>
 					<!-- ======================================================================
 					     INSTALLATION DATE
-					     ====================================================================== -->
-					<div class="form-group">
+					====================================================================== -->
+					<fieldset>
+						<legend>
+							Installation Information
+							<span class="required-indicator">*</span>
+						</legend>
 						<label for="installation-date">
 							Date of Installation:
 							<span class="required-indicator">*</span>
 						</label>
 						<input type="date" id="installation-date" name="installation-date" required>
-					</div>
+					</fieldset>
 					<!-- ======================================================================
 					     PRODUCT FEATURES
-					     ====================================================================== -->
-					<div class="form-group">
+					====================================================================== -->
+					<fieldset>
+						<legend>Product Features</legend>
 						<p>Which features did you find useful in the product?</p>
 						<p>(Check all that apply)</p>
 						<div class="features-group">
@@ -113,38 +120,38 @@
 								<label for="feature-design">Design</label>
 							</div>
 						</div>
-					</div>
+					</fieldset>
 					<!-- ======================================================================
 					     WRITTEN REVIEW
-					     ====================================================================== -->
-					<div class="form-group">
-						<label for="review">Written Review:</label>
+					====================================================================== -->
+					<fieldset>
+						<legend>Written Review</legend>
+						<label for="review">Your Comments:</label>
 						<textarea
 							id="review"
 							name="review"
 							rows="5"
 							placeholder="Share your experience with this product..."
 						></textarea>
-					</div>
+					</fieldset>
 					<!-- ======================================================================
 					     USER INFORMATION
-					     ====================================================================== -->
-					<div class="form-group">
+					====================================================================== -->
+					<fieldset>
+						<legend>Your Information</legend>
 						<label for="user-name">Your Name (optional):</label>
 						<input type="text" id="user-name" name="user-name">
-					</div>
+					</fieldset>
 					<!-- ======================================================================
 					     FORM SUBMISSION
-					     ====================================================================== -->
-					<div class="form-group">
-						<input type="submit" value="Submit" class="submit-button">
-					</div>
+					====================================================================== -->
+					<input type="submit" value="Submit" class="submit-button">
 				</form>
 			</section>
 		</main>
 		<!-- ======================================================================
 		     FOOTER
-		     ====================================================================== -->
+		====================================================================== -->
 		<footer>
 			<p>
 				&copy;
