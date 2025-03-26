@@ -1,0 +1,303 @@
+/* Root variables for consistent styling */
+:root {
+    /* Colors */
+    --primary-color: #3a7ca5;
+    --primary-dark: #2c6384;
+    --secondary-color: #d9e5ec;
+    --accent-color: #FFDF00;
+    --text-color: #333333;
+    --light-text: #f5f5f5;
+    --border-color: #cccccc;
+    --success-color: #4caf50;
+    --error-color: #e74c3c;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Typography */
+    --font-family: 'DM Sans', sans-serif;
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-large: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 2rem;
+
+    /* Other */
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.2s;
+}
+
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: var(--font-size-xxl);
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Layout */
+header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+header h1,
+header h2 {
+    color: var(--light-text);
+    margin-bottom: var(--spacing-sm);
+}
+
+main {
+    flex: 1;
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-section,
+.thank-you-section {
+    background-color: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+footer {
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+    text-align: center;
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: var(--font-size-base);
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(58, 124, 165, 0.2);
+}
+
+/* Form note */
+.form-note {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-sm);
+    background-color: var(--secondary-color);
+    border-left: 3px solid var(--primary-color);
+    font-size: var(--font-size-small);
+}
+
+/* Required field indicators */
+.required-indicator {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+.rating-help-text {
+    display: block;
+    margin-top: var(--spacing-sm);
+    color: #777;
+    font-size: var(--font-size-small);
+}
+
+/* Simple required field styling */
+select:required,
+input[type="date"]:required,
+input[type="text"]:required {
+    border-left: solid 4px var(--error-color);
+}
+
+select:required:valid,
+input[type="date"]:required:valid,
+input[type="text"]:required:valid {
+    border-left: solid 4px var(--success-color);
+}
+
+/* For radio buttons since they don't have borders */
+.rating {
+    border-left: solid 4px var(--error-color);
+    padding-left: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+/* Add this class with JavaScript when a radio is selected */
+.rating.valid {
+    border-left: solid 4px var(--success-color);
+}
+
+/* Rating stars styling */
+.rating input {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--border-color);
+    transition: color var(--transition-speed);
+    margin-right: var(--spacing-xs);
+}
+
+.rating label:hover,
+.rating label:hover~label,
+.rating input:checked~label {
+    color: var(--accent-color);
+}
+
+/* Features checkboxes */
+.features-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.feature {
+    display: flex;
+}
+
+.feature input[type="checkbox"] {
+    margin-right: var(--spacing-sm);
+    width: 25px;
+    height: 25px;
+}
+
+/* Submit button */
+.submit-button,
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-base);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.submit-button:hover,
+.button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Thank you page styles */
+.confirmation-message {
+    background-color: var(--secondary-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--success-color);
+    margin-bottom: var(--spacing-xl);
+}
+
+.review-stats {
+    display: inline-block;
+}
+
+.return-link {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .features-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section,
+    .thank-you-section {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .form-section,
+    .thank-you-section {
+        padding: var(--spacing-md);
+    }
+
+    header {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .rating label {
+        font-size: 1.75rem;
+    }
+}
