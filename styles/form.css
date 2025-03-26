@@ -124,18 +124,11 @@ footer {
 
 fieldset {
     margin-bottom: var(--spacing-lg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
     background-color: white;
 }
 
-legend {
-    font-weight: 700;
-    padding: 0 var(--spacing-sm);
-    color: var(--primary-dark);
-}
-
+/* Remove legend styles since we're not using them anymore */
 /* Keep existing form-group styles for backward compatibility */
 .form-group {
     margin-bottom: var(--spacing-lg);
