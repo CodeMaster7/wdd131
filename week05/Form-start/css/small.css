@@ -114,6 +114,7 @@ main {
     max-width: 400px;
     appearance: none;
 }
+
 .wf1 input[type="radio"],
 .wf1 input[type="checkbox"] {
     margin-right: 6px;
@@ -131,9 +132,11 @@ main {
     box-shadow: 1px 1px 4px #999;
     cursor: pointer;
 }
+
 .wf1 input:required {
     border-left: solid 8px red;
 }
+
 .wf1 input:required:valid {
     border-left: solid 8px green;
 }
