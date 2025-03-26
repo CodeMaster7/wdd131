@@ -1,4 +1,7 @@
-/* Root variables for consistent styling */
+/* ==========================================================================
+   ROOT VARIABLES
+   ========================================================================== */
+
 :root {
     /* Colors */
     --primary-color: #3a7ca5;
@@ -32,7 +35,10 @@
     --transition-speed: 0.2s;
 }
 
-/* Base styles */
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -49,7 +55,10 @@ body {
     min-height: 100vh;
 }
 
-/* Typography */
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
 h1,
 h2,
 h3,
@@ -68,11 +77,10 @@ h2 {
     font-size: var(--font-size-xl);
 }
 
-p {
-    margin-bottom: var(--spacing-md);
-}
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
 
-/* Layout */
 header {
     background-color: var(--primary-color);
     color: var(--light-text);
@@ -110,7 +118,10 @@ footer {
     margin-top: var(--spacing-xl);
 }
 
-/* Form elements */
+/* ==========================================================================
+   FORM ELEMENTS
+   ========================================================================== */
+
 .form-group {
     margin-bottom: var(--spacing-lg);
 }
@@ -151,6 +162,10 @@ textarea:focus {
     font-size: var(--font-size-small);
 }
 
+/* ==========================================================================
+   VALIDATION & REQUIRED FIELDS
+   ========================================================================== */
+
 /* Required field indicators */
 .required-indicator {
     color: var(--error-color);
@@ -177,6 +192,10 @@ input[type="date"]:required:valid,
 input[type="text"]:required:valid {
     border-left: solid 4px var(--success-color);
 }
+
+/* ==========================================================================
+   RATING STARS
+   ========================================================================== */
 
 /* For radio buttons since they don't have borders */
 .rating {
@@ -211,7 +230,10 @@ input[type="text"]:required:valid {
     color: var(--accent-color);
 }
 
-/* Features checkboxes */
+/* ==========================================================================
+   FEATURES CHECKBOXES
+   ========================================================================== */
+
 .features-group {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -220,6 +242,7 @@ input[type="text"]:required:valid {
 
 .feature {
     display: flex;
+    margin-top: 1rem;
 }
 
 .feature input[type="checkbox"] {
@@ -228,7 +251,10 @@ input[type="text"]:required:valid {
     height: 25px;
 }
 
-/* Submit button */
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
 .submit-button,
 .button {
     background-color: var(--primary-color);
@@ -248,7 +274,10 @@ input[type="text"]:required:valid {
     background-color: var(--primary-dark);
 }
 
-/* Thank you page styles */
+/* ==========================================================================
+   THANK YOU PAGE
+   ========================================================================== */
+
 .confirmation-message {
     background-color: var(--secondary-color);
     padding: var(--spacing-lg);
@@ -266,7 +295,10 @@ input[type="text"]:required:valid {
     text-align: center;
 }
 
-/* Responsive adjustments */
+/* ==========================================================================
+   RESPONSIVE STYLES
+   ========================================================================== */
+
 @media (max-width: 768px) {
     h1 {
         font-size: 1.75rem;
