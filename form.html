@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>WDD 131 - Product Review Form - Sam Bonfanti</title>
-		<meta
-			name="description"
-			content="WDD 131 – this is a page to review a product from a company. It is a simple form that allows the user to review a product from a company."
-		/>
-		<meta name="author" content="Sam Bonfanti" />
+		<meta name="description" content="WDD 131 – this is a page to review a product from a company. It is a simple form that allows the user to review a product from a company.">
+		<meta name="author" content="Sam Bonfanti" >
+		<!-- ======================================================================
+		     STYLESHEETS AND FONTS
+		     ====================================================================== -->
 		<!-- External CSS Stylesheet -->
-		<link rel="stylesheet" href="styles/form.css" />
+		<link rel="stylesheet" href="styles/form.css">
 		<!-- Google Fonts - DM Sans -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- JavaScript for Date Functionality -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap" rel="stylesheet">
+		<!-- ======================================================================
+		     SCRIPTS
+		     ====================================================================== -->
+		<!-- JavaScript for Form Functionality -->
 		<script src="scripts/form.js" defer></script>
 	</head>
 	<body>
+		<!-- ======================================================================
+		     HEADER
+		     ====================================================================== -->
 		<header>
 			<h1>Product Review Form</h1>
-			<h2>Review a product from a company</h2>
 		</header>
+		<!-- ======================================================================
+		     MAIN CONTENT
+		     ====================================================================== -->
 		<main>
 			<!-- Main Form Section -->
 			<section class="form-section">
+				<h2>Review a product</h2>
+				<!-- ======================================================================
+				     PRODUCT REVIEW FORM
+				     ====================================================================== -->
 				<form method="get" action="review.html" class="review-form">
 					<p class="form-note">
 						<span class="required-indicator">*</span>
 						indicates required fields
 					</p>
-					<!-- Product Selection -->
+					<!-- ======================================================================
+					     PRODUCT SELECTION
+					     ====================================================================== -->
 					<div class="form-group">
 						<label for="product">
 							Product Name:
@@ -46,58 +57,66 @@
 							<!-- Product options will be populated by JavaScript -->
 						</select>
 					</div>
-					<!-- Overall Rating -->
+					<!-- ======================================================================
+					     RATING SELECTION
+					     ====================================================================== -->
 					<div class="form-group">
 						<p>
 							Overall Rating:
 							<span class="required-indicator">*</span>
 						</p>
 						<div class="rating">
-							<input type="radio" id="star5" name="rating" value="5" />
+							<input type="radio" id="star5" name="rating" value="5">
 							<label for="star5">☆</label>
-							<input type="radio" id="star4" name="rating" value="4" />
+							<input type="radio" id="star4" name="rating" value="4">
 							<label for="star4">☆</label>
-							<input type="radio" id="star3" name="rating" value="3" />
+							<input type="radio" id="star3" name="rating" value="3">
 							<label for="star3">☆</label>
-							<input type="radio" id="star2" name="rating" value="2" />
+							<input type="radio" id="star2" name="rating" value="2">
 							<label for="star2">☆</label>
-							<input type="radio" id="star1" name="rating" value="1" required />
+							<input type="radio" id="star1" name="rating" value="1" required>
 							<label for="star1">☆</label>
 						</div>
 						<small class="rating-help-text">Please select a rating (required)</small>
 					</div>
-					<!-- Installation Date -->
+					<!-- ======================================================================
+					     INSTALLATION DATE
+					     ====================================================================== -->
 					<div class="form-group">
 						<label for="installation-date">
 							Date of Installation:
 							<span class="required-indicator">*</span>
 						</label>
-						<input type="date" id="installation-date" name="installation-date" required />
+						<input type="date" id="installation-date" name="installation-date" required>
 					</div>
-					<!-- Useful Features -->
+					<!-- ======================================================================
+					     PRODUCT FEATURES
+					     ====================================================================== -->
 					<div class="form-group">
 						<p>Which features did you find useful in the product?</p>
 						<p>(Check all that apply)</p>
 						<div class="features-group">
 							<div class="feature">
-								<input type="checkbox" id="feature-durability" name="features" value="durability" />
+								<input type="checkbox" id="feature-durability" name="features" value="durability">
 								<label for="feature-durability">Durability</label>
 							</div>
 							<div class="feature">
-								<input type="checkbox" id="feature-ease-of-use" name="features" value="ease-of-use" />
+								<input type="checkbox" id="feature-ease-of-use" name="features" value="ease-of-use">
 								<label for="feature-ease-of-use">Ease of Use</label>
 							</div>
 							<div class="feature">
-								<input type="checkbox" id="feature-performance" name="features" value="performance" />
+								<input type="checkbox" id="feature-performance" name="features" value="performance">
 								<label for="feature-performance">Performance</label>
 							</div>
 							<div class="feature">
-								<input type="checkbox" id="feature-design" name="features" value="design" />
+								<input type="checkbox" id="feature-design" name="features" value="design">
 								<label for="feature-design">Design</label>
 							</div>
 						</div>
 					</div>
-					<!-- Written Review -->
+					<!-- ======================================================================
+					     WRITTEN REVIEW
+					     ====================================================================== -->
 					<div class="form-group">
 						<label for="review">Written Review:</label>
 						<textarea
@@ -107,16 +126,23 @@
 							placeholder="Share your experience with this product..."
 						></textarea>
 					</div>
-					<!-- User Name -->
+					<!-- ======================================================================
+					     USER INFORMATION
+					     ====================================================================== -->
 					<div class="form-group">
 						<label for="user-name">Your Name (optional):</label>
-						<input type="text" id="user-name" name="user-name" />
+						<input type="text" id="user-name" name="user-name">
 					</div>
-					<!-- Submit Button -->
-					<div class="form-group"><input type="submit" value="Submit Review" class="submit-button" /></div>
+					<!-- ======================================================================
+					     FORM SUBMISSION
+					     ====================================================================== -->
+					<div class="form-group"><input type="submit" value="Submit" class="submit-button"></div>
 				</form>
 			</section>
 		</main>
+		<!-- ======================================================================
+		     FOOTER
+		     ====================================================================== -->
 		<footer>
 			<p>
 				&copy;
