@@ -8,19 +8,18 @@ const deleteButton = document.createElement('button')
 deleteButton.setAttribute('aria-label', 'Delete chapter')
 deleteButton.textContent = '❌'
 
-
 addButton.addEventListener('click', () => {
-  if (input.value.trim() !== '') {
-    li.textContent = input.value
-    li.appendChild(deleteButton)
-    list.appendChild(li)
-    input.value = ''
-    input.focus()
+	if (input.value.trim() !== '') {
+		li.textContent = input.value
+		li.appendChild(deleteButton)
+		list.appendChild(li)
+		input.value = ''
+		input.focus()
 	}
 })
 
 deleteButton.addEventListener('click', () => {
-  list.removeChild(li)
-  input.focus()
-  input.value = ''
+	list.removeChild(li)
+	input.focus()
+	input.value = ''
 })
