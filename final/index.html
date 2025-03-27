@@ -3,57 +3,56 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>WDD 131 - Photosnap - Sam Bonfanti</title>
+		<title>Photosnap</title>
 		<meta
 			name="description"
 			content="WDD 131 – Photosnap is a platform designed for photographers to share their stories and work. The site provides a place to upload photos, videos, and stories, and to connect with other photographers."
 		/>
 		<meta name="author" content="Sam Bonfanti" />
-		<!--======================================================================STYLESHEETS AND FONTS======================================================================-->
-		<!-- External CSS Stylesheet -->
 		<link rel="stylesheet" href="styles/main.css" />
-		<!-- Google Fonts - DM Sans -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
 			rel="stylesheet"
 		/>
-		<!--======================================================================SCRIPTS======================================================================-->
-		<!-- JavaScript for Form Functionality -->
 		<script src="scripts/main.js" defer></script>
 	</head>
 	<body>
-		<!-- Header -->
 		<header class="header">
-			<!-- Main Navigation -->
 			<nav class="nav">
 				<div class="nav__container">
 					<a href="index.html" class="nav__logo">
-						<img
-							src="images/shared/desktop/logo.svg"
-							alt="Photosnap Logo"
-							width="170"
-							height="16"
-							loading="lazy"
-						/>
+						<img src="images/shared/desktop/logo.svg" alt="Photosnap Logo" loading="lazy" />
 					</a>
-					<button class="nav__toggle" aria-label="Toggle Menu"><span class="nav__toggle-line"></span></button>
+					<button class="nav__toggle" aria-label="Toggle Menu">
+						<img src="images/shared/mobile/menu.svg" alt="Menu" class="nav__toggle-icon menu-icon" />
+						<img src="images/shared/mobile/close.svg" alt="Close" class="nav__toggle-icon close-icon" />
+					</button>
 					<ul class="nav__menu">
-						<li class="nav__item"><a href="pages/stories.html" class="nav__link">Stories</a></li>
-						<li class="nav__item"><a href="pages/features.html" class="nav__link">Features</a></li>
-						<li class="nav__item"><a href="pages/pricing.html" class="nav__link">Pricing</a></li>
+						<div class="nav__menu-navigation">
+							<li class="nav__item"><a href="pages/stories.html" class="nav__link">Stories</a></li>
+							<li class="nav__item"><a href="pages/features.html" class="nav__link">Features</a></li>
+							<li class="nav__item"><a href="pages/pricing.html" class="nav__link">Pricing</a></li>
+						</div>
+						<div class="nav__menu-bottom">
+							<a href="#" class="nav__menu-cta">GET AN INVITE</a>
+						</div>
 					</ul>
 					<a href="#" class="nav__cta btn btn--primary">Get an invite</a>
 				</div>
 			</nav>
 		</header>
-		<!-- Main Content -->
 		<main>
-			<!-- Hero Section -->
 			<section class="hero">
 				<div class="hero__content">
-					<h1 class="hero__title">Create and share your photo stories.</h1>
+					<h1 class="hero__title">
+						Create and
+						<br />
+						share your
+						<br />
+						photo stories.
+					</h1>
 					<p class="hero__text">
 						Photosnap is a platform for photographers and visual storytellers. We make it easy to share
 						photos, tell stories and connect with others.
@@ -70,26 +69,17 @@
 						<img
 							src="images/home/mobile/create-and-share.jpg"
 							alt="Create and share your stories"
-							width="830"
-							height="650"
 							loading="lazy"
 						/>
 					</picture>
 				</div>
 			</section>
-			<!-- Beautiful Stories Section -->
 			<section class="beautiful-stories">
 				<div class="beautiful-stories__image">
 					<picture>
 						<source media="(min-width: 1024px)" srcset="images/home/desktop/beautiful-stories.jpg" />
 						<source media="(min-width: 768px)" srcset="images/home/tablet/beautiful-stories.jpg" />
-						<img
-							src="images/home/mobile/beautiful-stories.jpg"
-							alt="Beautiful Stories"
-							width="830"
-							height="650"
-							loading="lazy"
-						/>
+						<img src="images/home/mobile/beautiful-stories.jpg" alt="Beautiful Stories" loading="lazy" />
 					</picture>
 				</div>
 				<div class="beautiful-stories__content">
@@ -104,7 +94,6 @@
 					</a>
 				</div>
 			</section>
-			<!-- Designed for Everyone Section -->
 			<section class="designed-for-everyone">
 				<div class="designed-for-everyone__content">
 					<h2 class="designed-for-everyone__title">Designed for everyone</h2>
@@ -124,25 +113,23 @@
 						<img
 							src="images/home/mobile/designed-for-everyone.jpg"
 							alt="Designed for everyone"
-							width="830"
-							height="650"
 							loading="lazy"
 						/>
 					</picture>
 				</div>
 			</section>
-			<!-- Stories Grid -->
 			<section class="stories-grid">
-				<!-- Story Card 1 - The Mountains -->
 				<article class="story-card">
-					<img
-						src="images/stories/desktop/mountains.jpg"
-						alt="The Mountains"
-						width="360"
-						height="500"
-						loading="lazy"
-						class="story-card__image"
-					/>
+					<picture>
+						<source media="(min-width: 1024px)" srcset="images/stories/desktop/mountains.jpg" />
+						<source media="(min-width: 768px)" srcset="images/stories/tablet/mountains.jpg" />
+						<img
+							src="images/stories/mobile/mountains.jpg"
+							alt="The Mountains"
+							loading="lazy"
+							class="story-card__image"
+						/>
+					</picture>
 					<div class="story-card__content">
 						<h3 class="story-card__title">The Mountains</h3>
 						<p class="story-card__author">by John Appleseed</p>
@@ -152,16 +139,17 @@
 						</a>
 					</div>
 				</article>
-				<!-- Story Card 2 - Sunset Cityscapes -->
 				<article class="story-card">
-					<img
-						src="images/stories/desktop/cityscapes.jpg"
-						alt="Sunset Cityscapes"
-						width="360"
-						height="500"
-						loading="lazy"
-						class="story-card__image"
-					/>
+					<picture>
+						<source media="(min-width: 1024px)" srcset="images/stories/desktop/cityscapes.jpg" />
+						<source media="(min-width: 768px)" srcset="images/stories/tablet/cityscapes.jpg" />
+						<img
+							src="images/stories/mobile/cityscapes.jpg"
+							alt="Sunset Cityscapes"
+							loading="lazy"
+							class="story-card__image"
+						/>
+					</picture>
 					<div class="story-card__content">
 						<h3 class="story-card__title">Sunset Cityscapes</h3>
 						<p class="story-card__author">by Benjamin Cruz</p>
@@ -171,16 +159,17 @@
 						</a>
 					</div>
 				</article>
-				<!-- Story Card 3 - 18 Days Voyage -->
 				<article class="story-card">
-					<img
-						src="images/stories/desktop/18-days-voyage.jpg"
-						alt="18 Days Voyage"
-						width="360"
-						height="500"
-						loading="lazy"
-						class="story-card__image"
-					/>
+					<picture>
+						<source media="(min-width: 1024px)" srcset="images/stories/desktop/18-days-voyage.jpg" />
+						<source media="(min-width: 768px)" srcset="images/stories/tablet/18-days-voyage.jpg" />
+						<img
+							src="images/stories/mobile/18-days-voyage.jpg"
+							alt="18 Days Voyage"
+							loading="lazy"
+							class="story-card__image"
+						/>
+					</picture>
 					<div class="story-card__content">
 						<h3 class="story-card__title">18 Days Voyage</h3>
 						<p class="story-card__author">by Alexei Borodin</p>
@@ -190,16 +179,17 @@
 						</a>
 					</div>
 				</article>
-				<!-- Story Card 4 - Architecturals -->
 				<article class="story-card">
-					<img
-						src="images/stories/desktop/architecturals.jpg"
-						alt="Architecturals"
-						width="360"
-						height="500"
-						loading="lazy"
-						class="story-card__image"
-					/>
+					<picture>
+						<source media="(min-width: 1024px)" srcset="images/stories/desktop/architecturals.jpg" />
+						<source media="(min-width: 768px)" srcset="images/stories/tablet/architecturals.jpg" />
+						<img
+							src="images/stories/mobile/architecturals.jpg"
+							alt="Architecturals"
+							loading="lazy"
+							class="story-card__image"
+						/>
+					</picture>
 					<div class="story-card__content">
 						<h3 class="story-card__title">Architecturals</h3>
 						<p class="story-card__author">by Samantha Brooke</p>
@@ -210,18 +200,10 @@
 					</div>
 				</article>
 			</section>
-			<!-- Features Section -->
 			<section class="features">
-				<!-- Feature 1: Responsive -->
 				<article class="feature-item">
 					<div class="feature-item__icon">
-						<img
-							src="images/features/desktop/responsive.svg"
-							alt="Responsive icon"
-							width="72"
-							height="72"
-							loading="lazy"
-						/>
+						<img src="images/features/desktop/responsive.svg" alt="Responsive icon" loading="lazy" />
 					</div>
 					<h3 class="feature-item__title">100% Responsive</h3>
 					<p class="feature-item__text">
@@ -229,16 +211,9 @@
 						any screen.
 					</p>
 				</article>
-				<!-- Feature 2: No Upload Limit -->
 				<article class="feature-item">
 					<div class="feature-item__icon">
-						<img
-							src="images/features/desktop/no-limit.svg"
-							alt="No limit icon"
-							width="72"
-							height="72"
-							loading="lazy"
-						/>
+						<img src="images/features/desktop/no-limit.svg" alt="No limit icon" loading="lazy" />
 					</div>
 					<h3 class="feature-item__title">No Photo Upload Limit</h3>
 					<p class="feature-item__text">
@@ -246,16 +221,9 @@
 						stories in one go.
 					</p>
 				</article>
-				<!-- Feature 3: Available to Embed -->
 				<article class="feature-item">
 					<div class="feature-item__icon">
-						<img
-							src="images/features/desktop/embed.svg"
-							alt="Embed icon"
-							width="72"
-							height="72"
-							loading="lazy"
-						/>
+						<img src="images/features/desktop/embed.svg" alt="Embed icon" loading="lazy" />
 					</div>
 					<h3 class="feature-item__title">Available to Embed</h3>
 					<p class="feature-item__text">
@@ -264,64 +232,27 @@
 				</article>
 			</section>
 		</main>
-		<!-- Footer -->
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__left">
 					<div class="footer__brand">
-						<img
-							src="images/shared/desktop/logo-white.svg"
-							alt="Photosnap Logo"
-							width="170"
-							height="16"
-							loading="lazy"
-						/>
+						<img src="images/shared/desktop/logo-white.svg" alt="Photosnap Logo" loading="lazy" />
 					</div>
 					<div class="footer__social">
 						<a href="#" class="footer__social-link">
-							<img
-								src="images/shared/desktop/facebook.svg"
-								alt="Facebook"
-								width="20"
-								height="20"
-								loading="lazy"
-							/>
+							<img src="images/shared/desktop/facebook.svg" alt="Facebook" loading="lazy" />
 						</a>
 						<a href="#" class="footer__social-link">
-							<img
-								src="images/shared/desktop/youtube.svg"
-								alt="YouTube"
-								width="20"
-								height="20"
-								loading="lazy"
-							/>
+							<img src="images/shared/desktop/youtube.svg" alt="YouTube" loading="lazy" />
 						</a>
 						<a href="#" class="footer__social-link">
-							<img
-								src="images/shared/desktop/twitter.svg"
-								alt="Twitter"
-								width="20"
-								height="20"
-								loading="lazy"
-							/>
+							<img src="images/shared/desktop/twitter.svg" alt="Twitter" loading="lazy" />
 						</a>
 						<a href="#" class="footer__social-link">
-							<img
-								src="images/shared/desktop/pinterest.svg"
-								alt="Pinterest"
-								width="20"
-								height="20"
-								loading="lazy"
-							/>
+							<img src="images/shared/desktop/pinterest.svg" alt="Pinterest" loading="lazy" />
 						</a>
 						<a href="#" class="footer__social-link">
-							<img
-								src="images/shared/desktop/instagram.svg"
-								alt="Instagram"
-								width="20"
-								height="20"
-								loading="lazy"
-							/>
+							<img src="images/shared/desktop/instagram.svg" alt="Instagram" loading="lazy" />
 						</a>
 					</div>
 				</div>
