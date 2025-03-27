@@ -2,106 +2,75 @@
 // MOBILE NAVIGATION TOGGLE
 // ==========================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
-	// Mobile navigation toggle functionality
-	const navToggle = document.querySelector('.nav__toggle')
-	const navMenu = document.querySelector('.nav__menu')
-	const header = document.querySelector('.header')
+// DOM Elements
+let navToggle, navMenu, menuIcon, closeIcon
 
-	// Create and store original toggle state
-	let menuOpen = false
+// Function to handle mobile menu toggle
+function toggleMobileMenu() {
+	// Toggle class for styling
+	navToggle.classList.toggle('active')
+	navMenu.classList.toggle('active')
 
-	// Setup mobile menu structure if not already done
-	if (navMenu && !navMenu.querySelector('.nav__menu-navigation')) {
-		// Create navigation section
-		const navMenuNavigation = document.createElement('div')
-		navMenuNavigation.classList.add('nav__menu-navigation')
-
-		// Move all navigation items to this section
-		const navItems = navMenu.querySelectorAll('.nav__item')
-		navItems.forEach((item) => {
-			navMenuNavigation.appendChild(item)
-		})
-
-		// Create bottom section for separator and CTA
-		const navMenuBottom = document.createElement('div')
-		navMenuBottom.classList.add('nav__menu-bottom')
-
-		// Create CTA button
-		const mobileCtaBtn = document.createElement('a')
-		mobileCtaBtn.setAttribute('href', '#')
-		mobileCtaBtn.classList.add('nav__menu-cta')
-		mobileCtaBtn.textContent = 'GET AN INVITE'
-
-		// Add the button to the bottom section
-		navMenuBottom.appendChild(mobileCtaBtn)
-
-		// Clear the menu and add our new structure
-		while (navMenu.firstChild) {
-			navMenu.removeChild(navMenu.firstChild)
-		}
-
-		navMenu.appendChild(navMenuNavigation)
-		navMenu.appendChild(navMenuBottom)
-
-		// Close menu when CTA button is clicked
-		mobileCtaBtn.addEventListener('click', () => {
-			if (menuOpen) {
-				toggleMobileMenu()
-			}
-		})
+	// Toggle icon visibility
+	if (navToggle.classList.contains('active')) {
+		menuIcon.style.opacity = '0'
+		menuIcon.style.visibility = 'hidden'
+		closeIcon.style.opacity = '1'
+		closeIcon.style.visibility = 'visible'
+	} else {
+		menuIcon.style.opacity = '1'
+		menuIcon.style.visibility = 'visible'
+		closeIcon.style.opacity = '0'
+		closeIcon.style.visibility = 'hidden'
 	}
+}
 
-	// Function to toggle mobile menu
-	function toggleMobileMenu() {
-		menuOpen = !menuOpen
-		navToggle.classList.toggle('active')
-		navMenu.classList.toggle('active')
+// Initialize the application
+function init() {
+	console.log('Initializing mobile navigation...')
 
-		// Update aria attributes for accessibility
-		navToggle.setAttribute('aria-expanded', menuOpen)
+	// Get DOM elements
+	navToggle = document.querySelector('.nav__toggle')
+	navMenu = document.querySelector('.nav__menu')
+	menuIcon = document.querySelector('.menu-icon')
+	closeIcon = document.querySelector('.close-icon')
 
-		// Prevent scrolling when menu is open
-		if (menuOpen) {
-			document.body.style.overflow = 'hidden'
-		} else {
-			document.body.style.overflow = ''
-		}
-	}
+	console.log('Toggle:', navToggle)
+	console.log('Menu:', navMenu)
+	console.log('Menu Icon:', menuIcon)
+	console.log('Close Icon:', closeIcon)
 
-	// Set initial ARIA attributes
-	if (navToggle) {
-		navToggle.setAttribute('aria-expanded', 'false')
-		navToggle.setAttribute('aria-label', 'Open menu')
-	}
+	// Simple Mobile Menu Toggle
+	if (navToggle && navMenu && menuIcon && closeIcon) {
+		console.log('All elements found, adding event listener')
 
-	// Event listener for toggle button
-	if (navToggle) {
-		navToggle.addEventListener('click', () => {
-			toggleMobileMenu()
+		// Toggle menu on click - only add the event listener
+		navToggle.addEventListener('click', toggleMobileMenu)
 
-			// Update aria-label based on state
-			if (menuOpen) {
-				navToggle.setAttribute('aria-label', 'Close menu')
-			} else {
-				navToggle.setAttribute('aria-label', 'Open menu')
-			}
+		// Also add click handlers to close menu when a link is clicked
+		const navLinks = document.querySelectorAll('.nav__menu .nav__link')
+		navLinks.forEach((link) => {
+			link.addEventListener('click', () => {
+				if (navToggle.classList.contains('active')) {
+					toggleMobileMenu()
+				}
+			})
 		})
+	} else {
+		console.error('Missing required elements for mobile navigation')
+		if (!navToggle) console.error('Missing: .nav__toggle')
+		if (!navMenu) console.error('Missing: .nav__menu')
+		if (!menuIcon) console.error('Missing: .menu-icon')
+		if (!closeIcon) console.error('Missing: .close-icon')
 	}
+}
 
-	// Handle mobile menu links for accessibility
-	const navLinks = document.querySelectorAll('.nav__link')
-	navLinks.forEach((link) => {
-		link.addEventListener('click', () => {
-			if (menuOpen) {
-				toggleMobileMenu()
-			}
-		})
-	})
-})
+// Run initialization when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', init)
 
 // ==========================================================================
 // SAVE TO LOCAL STORAGE FUNCTIONALITY
 // ==========================================================================
 
 // We'll add localStorage functionality later
+// For now, we'll just console.log the data
