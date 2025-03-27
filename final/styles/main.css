@@ -117,9 +117,12 @@ h6 {
     height: 16px;
 }
 
+/* Full-width images with cover fit
+   Note: story-card__image has its own specific styles in its respective section */
 .hero__image img,
 .beautiful-stories__image img,
-.designed-for-everyone__image img {
+.designed-for-everyone__image img,
+.featured-story__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -149,7 +152,7 @@ h6 {
     display: inline-flex;
     align-items: center;
     font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-regular);
     letter-spacing: var(--letter-spacing-button);
     text-transform: uppercase;
     cursor: pointer;
@@ -438,6 +441,121 @@ h6 {
 }
 
 /* ==========================================================================
+   FEATURED STORY SECTION
+   ========================================================================== */
+
+.featured-story {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: var(--color-white);
+}
+
+.featured-story__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xl);
+    background-color: var(--color-black);
+    z-index: 10;
+    order: 2;
+}
+
+.featured-story__label {
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.featured-story__title {
+    font-size: clamp(3.2rem, 5vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.33rem;
+    font-weight: var(--font-weight-bold);
+    width: clamp(20rem, 40vw, 20rem);
+    /* Responsive width that works on mobile and larger screens */
+}
+
+.featured-story__meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-small);
+}
+
+.featured-story__date {
+    margin-right: var(--spacing-md);
+}
+
+.featured-story__author {
+    opacity: 0.75;
+}
+
+.featured-story__text {
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.6;
+    width: clamp(32rem, 47vw, 39rem);
+}
+
+.featured-story__cta {
+    align-self: flex-start;
+    padding: 0;
+}
+
+.featured-story__image {
+    position: relative;
+    height: 40vh;
+    min-height: 35rem;
+    order: 1;
+}
+
+.featured-story__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+    z-index: 5;
+}
+
+/* Featured Story Media Queries */
+@media screen and (min-width: 768px) {
+    .featured-story {
+        flex-direction: row;
+    }
+
+    .featured-story__content {
+        width: 60%;
+        padding: var(--spacing-xxl);
+        order: 2;
+    }
+
+    .featured-story__image {
+        width: 40%;
+        height: auto;
+        min-height: 40rem;
+        order: 1;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .featured-story__content {
+        width: 50%;
+        padding: var(--spacing-xxl);
+    }
+
+    .featured-story__image {
+        width: 50%;
+        min-height: 50rem;
+    }
+}
+
+/* ==========================================================================
    HERO SECTION
    ========================================================================== */
 
@@ -451,30 +569,35 @@ h6 {
 
 .hero__image {
     order: 1;
-    width: 100%;
-    height: 29.4rem;
-    /* 294px for mobile */
     position: relative;
     overflow: hidden;
 }
 
-.hero__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
+/* Place the accent bar at bottom of image, not content */
+@media screen and (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+    }
 
-/* Gradient accent bar */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 12.8rem;
-    height: 0.6rem;
-    background: var(--gradient-accent);
-    z-index: 2;
+    .hero__image {
+        order: 2;
+        /* Image is on the right on larger screens */
+        width: 50%;
+    }
+
+    .hero__content {
+        order: 1;
+        /* Content is on the left on larger screens */
+        width: 50%;
+    }
+
+    .hero::before {
+        bottom: 0;
+        left: 50%;
+        /* Position at the left edge of image (which starts at 50%) */
+        width: 0.6rem;
+        height: 100%;
+    }
 }
 
 .hero__content {
@@ -485,6 +608,18 @@ h6 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+}
+
+.hero__content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    width: 12.8rem;
+    height: 0.6rem;
+    background: var(--gradient-accent);
+    z-index: 2;
 }
 
 .hero__title {
@@ -681,6 +816,25 @@ h6 {
     /* 375px for mobile */
     overflow: hidden;
     color: var(--color-white);
+}
+
+.story-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.6rem;
+    background: var(--gradient-accent);
+    z-index: 5;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: var(--transition-default);
+}
+
+.story-card:hover::before {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .story-card__image {
