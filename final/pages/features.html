@@ -9,38 +9,21 @@
 			content="Discover the features that make Photosnap the best platform for photographers. Unlimited uploads, responsive design, and built-in sharing tools."
 		/>
 		<meta name="author" content="Sam Bonfanti" />
-		<!-- ======================================================================
-		     STYLESHEETS AND FONTS
-		====================================================================== -->
-		<!-- External CSS Stylesheet -->
 		<link rel="stylesheet" href="../styles/main.css" />
-		<!-- Google Fonts - DM Sans -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
 			rel="stylesheet"
 		/>
-		<!-- ======================================================================
-		     SCRIPTS
-		====================================================================== -->
-		<!-- JavaScript for Form Functionality -->
 		<script src="../scripts/main.js" defer></script>
 	</head>
 	<body>
-		<!-- Header -->
 		<header class="header">
-			<!-- Main Navigation -->
 			<nav class="nav">
 				<div class="nav__container">
 					<a href="../index.html" class="nav__logo">
-						<img
-							src="../images/shared/desktop/logo.svg"
-							alt="Photosnap Logo"
-							width="170"
-							height="16"
-							loading="lazy"
-						/>
+						<img src="../images/shared/desktop/logo.svg" alt="Photosnap Logo" loading="lazy" />
 					</a>
 					<button class="nav__toggle" aria-label="Toggle Menu">
 						<img src="../images/shared/mobile/menu.svg" alt="Menu" class="nav__toggle-icon menu-icon" />
@@ -48,28 +31,19 @@
 					</button>
 					<ul class="nav__menu">
 						<div class="nav__menu-navigation">
-							<li class="nav__item">
-								<a href="stories.html" class="nav__link">Stories</a>
-							</li>
+							<li class="nav__item"><a href="stories.html" class="nav__link">Stories</a></li>
 							<li class="nav__item">
 								<a href="features.html" class="nav__link nav__link--active">Features</a>
 							</li>
-							<li class="nav__item">
-								<a href="pricing.html" class="nav__link">Pricing</a>
-							</li>
+							<li class="nav__item"><a href="pricing.html" class="nav__link">Pricing</a></li>
 						</div>
-						<div class="nav__menu-bottom">
-							<a href="#" class="nav__menu-cta">GET AN INVITE</a>
-						</div>
+						<div class="nav__menu-bottom"><a href="#" class="nav__menu-cta">GET AN INVITE</a></div>
 					</ul>
 					<a href="#" class="nav__cta btn btn--primary">Get an invite</a>
 				</div>
 			</nav>
 		</header>
-
-		<!-- Main Content -->
 		<main>
-			<!-- Features Header -->
 			<section class="features-header">
 				<div class="features-header__content">
 					<h1 class="features-header__title">Features</h1>
@@ -79,28 +53,17 @@
 					</p>
 				</div>
 				<div class="features-header__image">
-					<img
-						src="../images/features/desktop/hero.jpg"
-						alt="Photographer with camera"
-						width="830"
-						height="490"
-						loading="lazy"
-					/>
+					<picture>
+						<source media="(min-width: 1024px)" srcset="../images/features/desktop/hero.jpg" />
+						<source media="(min-width: 768px)" srcset="../images/features/tablet/hero.jpg" />
+						<img src="../images/features/mobile/hero.jpg" alt="Photographer with camera" loading="lazy" />
+					</picture>
 				</div>
 			</section>
-
-			<!-- Feature Grid -->
 			<section class="feature-grid">
-				<!-- Feature 1: Responsive -->
 				<article class="feature-card">
 					<div class="feature-card__icon">
-						<img
-							src="../images/features/desktop/responsive.svg"
-							alt="Responsive icon"
-							width="72"
-							height="72"
-							loading="lazy"
-						/>
+						<img src="../images/features/desktop/responsive.svg" alt="Responsive icon" loading="lazy" />
 					</div>
 					<h2 class="feature-card__title">100% Responsive</h2>
 					<p class="feature-card__text">
@@ -108,17 +71,9 @@
 						any screen.
 					</p>
 				</article>
-
-				<!-- Feature 2: No Upload Limit -->
 				<article class="feature-card">
 					<div class="feature-card__icon">
-						<img
-							src="../images/features/desktop/no-limit.svg"
-							alt="No limit icon"
-							width="72"
-							height="72"
-							loading="lazy"
-						/>
+						<img src="../images/features/desktop/no-limit.svg" alt="No limit icon" loading="lazy" />
 					</div>
 					<h2 class="feature-card__title">No Photo Upload Limit</h2>
 					<p class="feature-card__text">
@@ -126,50 +81,34 @@
 						stories in one go.
 					</p>
 				</article>
-
-				<!-- Feature 3: Available to Embed -->
 				<article class="feature-card">
 					<div class="feature-card__icon">
-						<img
-							src="../images/features/desktop/embed.svg"
-							alt="Embed icon"
-							width="72"
-							height="72"
-							loading="lazy"
-						/>
+						<img src="../images/features/desktop/embed.svg" alt="Embed icon" loading="lazy" />
 					</div>
 					<h2 class="feature-card__title">Available to Embed</h2>
 					<p class="feature-card__text">
 						Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and more.
 					</p>
 				</article>
-
-				<!-- Feature 4: Custom Domain -->
 				<article class="feature-card">
 					<div class="feature-card__icon">
 						<img
 							src="../images/features/desktop/custom-domain.svg"
 							alt="Custom domain icon"
-							width="72"
-							height="72"
 							loading="lazy"
 						/>
 					</div>
 					<h2 class="feature-card__title">Custom Domain</h2>
 					<p class="feature-card__text">
 						With Photosnap subscriptions you can host your stories on your own domain. You can also remove
-						our branding!
+						our branding !
 					</p>
 				</article>
-
-				<!-- Feature 5: Boost Your Exposure -->
 				<article class="feature-card">
 					<div class="feature-card__icon">
 						<img
 							src="../images/features/desktop/boost-exposure.svg"
 							alt="Boost exposure icon"
-							width="72"
-							height="72"
 							loading="lazy"
 						/>
 					</div>
@@ -179,17 +118,9 @@
 						our built in mailing list.
 					</p>
 				</article>
-
-				<!-- Feature 6: Drag & Drop -->
 				<article class="feature-card">
 					<div class="feature-card__icon">
-						<img
-							src="../images/features/desktop/drag-drop.svg"
-							alt="Drag and drop icon"
-							width="72"
-							height="72"
-							loading="lazy"
-						/>
+						<img src="../images/features/desktop/drag-drop.svg" alt="Drag and drop icon" loading="lazy" />
 					</div>
 					<h2 class="feature-card__title">Drag & Drop Image</h2>
 					<p class="feature-card__text">
@@ -198,83 +129,60 @@
 					</p>
 				</article>
 			</section>
-
-			<!-- Call to Action -->
 			<section class="cta">
+				<div class="cta__background">
+					<picture>
+						<source media="(min-width: 1024px)" srcset="../images/shared/desktop/bg-beta.jpg" />
+						<source media="(min-width: 768px)" srcset="../images/shared/tablet/bg-beta.jpg" />
+						<img src="../images/shared/mobile/bg-beta.jpg" alt="Beta background" loading="lazy" />
+					</picture>
+				</div>
 				<div class="cta__content">
 					<h2 class="cta__title">We're in beta. Get your invite today!</h2>
-					<a href="#" class="btn btn--primary">Get an invite</a>
+					<a href="#" class="btn btn--primary">
+						Get an invite
+						<span class="btn__arrow">→</span>
+					</a>
 				</div>
 			</section>
 		</main>
-
-		<!-- Footer -->
 		<footer class="footer">
 			<div class="footer__container">
-				<div class="footer__brand">
-					<img
-						src="../images/shared/desktop/logo-white.svg"
-						alt="Photosnap Logo"
-						width="170"
-						height="16"
-						loading="lazy"
-					/>
+				<div class="footer__left">
+					<div class="footer__brand">
+						<img src="../images/shared/desktop/logo-white.svg" alt="Photosnap Logo" loading="lazy" />
+					</div>
+					<div class="footer__social">
+						<a href="#" class="footer__social-link">
+							<img src="../images/shared/desktop/facebook.svg" alt="Facebook" loading="lazy" />
+						</a>
+						<a href="#" class="footer__social-link">
+							<img src="../images/shared/desktop/youtube.svg" alt="YouTube" loading="lazy" />
+						</a>
+						<a href="#" class="footer__social-link">
+							<img src="../images/shared/desktop/twitter.svg" alt="Twitter" loading="lazy" />
+						</a>
+						<a href="#" class="footer__social-link">
+							<img src="../images/shared/desktop/pinterest.svg" alt="Pinterest" loading="lazy" />
+						</a>
+						<a href="#" class="footer__social-link">
+							<img src="../images/shared/desktop/instagram.svg" alt="Instagram" loading="lazy" />
+						</a>
+					</div>
 				</div>
-				<div class="footer__social">
-					<a href="#" class="footer__social-link">
-						<img
-							src="../images/shared/desktop/facebook.svg"
-							alt="Facebook"
-							width="20"
-							height="20"
-							loading="lazy"
-						/>
-					</a>
-					<a href="#" class="footer__social-link">
-						<img
-							src="../images/shared/desktop/youtube.svg"
-							alt="YouTube"
-							width="20"
-							height="20"
-							loading="lazy"
-						/>
-					</a>
-					<a href="#" class="footer__social-link">
-						<img
-							src="../images/shared/desktop/twitter.svg"
-							alt="Twitter"
-							width="20"
-							height="20"
-							loading="lazy"
-						/>
-					</a>
-					<a href="#" class="footer__social-link">
-						<img
-							src="../images/shared/desktop/pinterest.svg"
-							alt="Pinterest"
-							width="20"
-							height="20"
-							loading="lazy"
-						/>
-					</a>
-					<a href="#" class="footer__social-link">
-						<img
-							src="../images/shared/desktop/instagram.svg"
-							alt="Instagram"
-							width="20"
-							height="20"
-							loading="lazy"
-						/>
-					</a>
+				<div class="footer__center">
+					<div class="footer__links">
+						<a href="../index.html" class="footer__link">Home</a>
+						<a href="stories.html" class="footer__link">Stories</a>
+						<a href="features.html" class="footer__link">Features</a>
+						<a href="pricing.html" class="footer__link">Pricing</a>
+					</div>
 				</div>
-				<div class="footer__links">
-					<a href="../index.html" class="footer__link">Home</a>
-					<a href="stories.html" class="footer__link">Stories</a>
-					<a href="features.html" class="footer__link">Features</a>
-					<a href="pricing.html" class="footer__link">Pricing</a>
-				</div>
-				<div class="footer__cta">
-					<a href="#" class="btn btn--primary">Get an invite</a>
+				<div class="footer__right">
+					<a href="#" class="btn btn--primary">
+						Get an invite
+						<span class="btn__arrow">→</span>
+					</a>
 					<p class="footer__copyright">Copyright 2023. All Rights Reserved</p>
 				</div>
 			</div>
