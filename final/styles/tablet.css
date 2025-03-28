@@ -276,6 +276,30 @@
         opacity: 0.6;
     }
 
+    /* Header content before element adjustments for all pages */
+    .hero__content::before {
+        top: 26%;
+        left: 0;
+        width: 0.6rem;
+        height: 45%;
+        transform: none;
+    }
+
+    .features-header__content::before,
+    .pricing-header__content::before {
+        top: 0;
+        left: 0;
+        width: 0.6rem;
+        height: 100%;
+        transform: none;
+    }
+
+    .hero,
+    .beautiful-stories,
+    .designed-for-everyone {
+        min-height: 60rem;
+    }
+
     /* Beautiful Stories Tablet Adjustments */
     .beautiful-stories {
         flex-direction: row;
@@ -371,6 +395,13 @@
         gap: 7.2rem;
     }
 
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.2rem;
+        padding: var(--spacing-xxl) var(--spacing-lg);
+    }
+
     .feature-item {
         margin-bottom: 0;
         padding: 0 3.2rem;
@@ -398,7 +429,21 @@
 
     /* CTA Section */
     .cta {
-        padding: var(--spacing-xxl) var(--spacing-xl);
+        padding: var(--spacing-xxxl) var(--spacing-xxl);
+        position: relative;
+        background-color: var(--color-black);
+    }
+
+    .cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.6rem;
+        height: 100%;
+        transform: none;
+        background: var(--gradient-accent);
+        z-index: 5;
     }
 
     .cta__content {
@@ -406,17 +451,52 @@
         justify-content: space-between;
         text-align: left;
         align-items: center;
-    }
-
-    .cta__content::before {
-        top: -2rem;
-        left: 0;
-        transform: none;
+        position: relative;
     }
 
     .cta__title {
         margin-bottom: 0;
         max-width: 60%;
+        white-space: normal;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Features and Pricing Header Tablet Adjustments */
+    .features-header,
+    .pricing-header {
+        flex-direction: row;
+        min-height: 60rem;
+    }
+
+    .features-header__image,
+    .pricing-header__image {
+        order: 2;
+        width: 50%;
+    }
+
+    .features-header__content,
+    .pricing-header__content {
+        order: 1;
+        width: 100%;
+        padding: 4.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .features-header__title,
+    .pricing-header__title {
+        font-size: 4rem;
+        margin-bottom: 2.1rem;
+        max-width: 38.7rem;
+    }
+
+    .features-header__text,
+    .pricing-header__text {
+        margin-bottom: 4.8rem;
+        max-width: 38.7rem;
+        opacity: 0.6;
     }
 }
 
@@ -514,6 +594,17 @@
     .nav__cta.btn.btn--primary:hover::before,
     .nav__menu-cta:hover::before {
         opacity: 1;
+    }
+
+    /* Header content before element adjustments for all pages in landscape */
+    .features-header__content::before,
+    .pricing-header__content::before,
+    .cta__content::before {
+        top: 0;
+        left: 0;
+        width: 0.6rem;
+        height: 100%;
+        transform: none;
     }
 
     /* Hero section landscape */
@@ -696,5 +787,91 @@
     /* Make footer__left divs use contents display to allow their children to be positioned by grid */
     .footer__left {
         display: contents;
+    }
+
+    /* Features and Pricing Header landscape */
+    .features-header,
+    .pricing-header {
+        flex-direction: row;
+        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .features-header__image,
+    .pricing-header__image {
+        order: 2;
+        width: 50%;
+        height: 100vh;
+        position: relative;
+    }
+
+    .features-header__content,
+    .pricing-header__content {
+        order: 1;
+        width: 50%;
+        padding: 4rem;
+        justify-content: center;
+    }
+
+    /* Add the ::before styling for the features-header to match hero section */
+    .features-header__content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.6rem;
+        height: 100%;
+        transform: none;
+        background: var(--gradient-accent);
+        z-index: 2;
+    }
+
+    /* Add image styles for features and pricing headers to match hero */
+    .features-header__image picture,
+    .pricing-header__image picture {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .features-header__image img,
+    .pricing-header__image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* Features grid in landscape */
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        padding: 6rem 4rem;
+    }
+
+    /* CTA adjustments for landscape */
+    .cta__title {
+        white-space: normal;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.6rem;
+        height: 100%;
+        transform: none;
+        background: var(--gradient-accent);
+        z-index: 5;
     }
 }
