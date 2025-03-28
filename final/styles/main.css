@@ -68,18 +68,6 @@
     transform: translateX(0.5rem);
 }
 
-/* Remove duplicate text styles */
-.hero__text,
-.beautiful-stories__text,
-.designed-for-everyone__text,
-.features-header__text,
-.feature-card__text,
-.feature-item__text,
-.pricing-header__text,
-.plan-card__description {
-    composes: text-base;
-}
-
 /* Reset styles */
 * {
     margin: 0;
@@ -1396,16 +1384,6 @@ h6 {
 @media screen and (min-width: 768px) {
     .pricing-plans {
         padding: var(--spacing-xxl) var(--spacing-xl);
-    }
-
-    .pricing-grid {
-        composes: grid grid--2-col;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .pricing-grid {
-        composes: grid grid--3-col;
     }
 }
 
