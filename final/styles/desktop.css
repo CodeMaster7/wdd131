@@ -1,0 +1,340 @@
+/* Desktop Styles (1024px and up) */
+@media screen and (min-width: 1024px) {
+
+    /* Navigation Desktop Adjustments */
+    .nav__container {
+        padding: 1.6rem 16.5rem;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    /* Hero Desktop Adjustments */
+    .hero {
+        flex-direction: row;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .hero__image {
+        order: 2;
+        width: 56%;
+        height: 100%;
+        position: relative;
+    }
+
+    .hero__content {
+        order: 1;
+        width: 44%;
+        padding: 17.3rem 11.1rem;
+    }
+
+    .hero__title {
+        font-size: 4.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero__text {
+        margin-bottom: 5.4rem;
+    }
+
+    /* Beautiful Stories Desktop Adjustments */
+    .beautiful-stories {
+        flex-direction: row;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .beautiful-stories__image {
+        width: 56%;
+        height: 100%;
+    }
+
+    .beautiful-stories__content {
+        width: 44%;
+        padding: 13.6rem 11.1rem;
+    }
+
+    /* Designed for Everyone Desktop Adjustments */
+    .designed-for-everyone {
+        flex-direction: row-reverse;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .designed-for-everyone__image {
+        width: 56%;
+        height: 100%;
+    }
+
+    .designed-for-everyone__content {
+        width: 44%;
+        padding: 13.6rem 11.1rem;
+    }
+
+    /* Stories Grid Desktop */
+    .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Featured Story Desktop Adjustments - Matching Tablet View */
+    .featured-story {
+        position: relative;
+        height: 60rem;
+        display: block;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .featured-story__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .featured-story__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .featured-story__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 4.8rem;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+        justify-content: center;
+        z-index: 2;
+    }
+
+    .featured-story__overlay {
+        display: none;
+    }
+
+    .featured-story__title {
+        font-size: 4rem;
+        margin-bottom: 2.1rem;
+        max-width: 38.7rem;
+        width: auto;
+    }
+
+    .featured-story__text {
+        margin-bottom: 4.8rem;
+        max-width: 38.7rem;
+        opacity: 0.6;
+        width: auto;
+    }
+
+    /* Features Desktop Adjustments */
+    .features {
+        padding: 16rem 16.5rem;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        flex-direction: row;
+    }
+
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        margin: 10rem;
+    }
+
+    .feature-item {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .feature-item__icon {
+        margin-bottom: 4.8rem;
+    }
+
+    .feature-item__title {
+        margin-bottom: 1.6rem;
+    }
+
+    /* Features and Pricing Header Desktop Adjustments */
+    .features-header,
+    .pricing-header {
+        flex-direction: row;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        height: auto;
+        min-height: unset;
+    }
+
+    .features-header__image,
+    .pricing-header__image {
+        order: 2;
+        width: 56%;
+        height: unset;
+    }
+
+    .features-header__content,
+    .pricing-header__content {
+        order: 1;
+        width: 44%;
+        padding: 17.3rem 11.1rem;
+    }
+
+    .features-header__title,
+    .pricing-header__title {
+        font-size: 4.8rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .features-header__text,
+    .pricing-header__text {
+        margin-bottom: 0;
+    }
+
+    /* Pricing Desktop Adjustments */
+    .pricing-plans {
+        padding: 12rem 16.5rem;
+    }
+
+    .pricing-toggle {
+        margin-bottom: 6.4rem;
+    }
+
+    /* Desktop Pricing Grid - 3 columns side by side */
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        padding: 0;
+    }
+
+    .plan-card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 4.8rem 4rem;
+        margin: 0;
+    }
+
+    .plan-card__header {
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+
+    .plan-card__price {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .plan-card__cta {
+        width: 100%;
+        margin-top: auto;
+    }
+
+    /* Compare Features Desktop */
+    .compare-features {
+        padding: 16rem 16.5rem;
+        max-width: 110rem;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* Add COMPARE title at the top */
+    .compare-features::before {
+        content: 'COMPARE';
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 4rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+    }
+
+    .compare-features__title {
+        margin-top: 10rem;
+        margin-bottom: 5.6rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        padding-bottom: 2.3rem;
+    }
+
+    .compare-features__table {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-column-gap: 8rem;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .compare-features__feature-name {
+        width: max-content;
+    }
+
+    /* Hide all header rows in desktop view except the main one */
+    .compare-features__row--header {
+        display: none;
+    }
+
+    .compare-features__row--main-header {
+        display: contents;
+    }
+
+    .compare-features__cell {
+        padding: 2.4rem 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        font-size: 1.2rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    .compare-features__cell--feature {
+        text-align: left;
+        grid-column: 1;
+    }
+
+    .compare-features__cell img {
+        width: 1.8rem;
+        height: auto;
+    }
+
+    /* CTA Desktop Adjustments */
+    .cta {
+        padding: 6.8rem 16.5rem;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .cta__content {
+        justify-content: space-between;
+    }
+
+    .cta__title {
+        max-width: 40rem;
+    }
+
+    /* Footer Desktop Adjustments */
+    .footer {
+        padding: 8.5rem 16.5rem;
+    }
+
+    .footer__container {
+        grid-column-gap: 10rem;
+    }
+}
+
+/* Utility classes */
+.desktop-only {
+    display: contents;
+}
+
+.mobile-only {
+    display: none;
+}
