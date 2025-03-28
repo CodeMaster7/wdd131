@@ -1428,94 +1428,110 @@ h6 {
     position: relative;
     padding-bottom: var(--spacing-lg);
     font-weight: var(--font-weight-bold);
-}
-
-.compare-features__title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-black);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .compare-features__table {
     width: 100%;
 }
 
-.compare-features__row {
-    display: grid;
-    border-bottom: none;
-}
-
-.compare-features__row:nth-child(3n) {
+/* Feature blocks */
+.compare-features__feature {
+    margin-bottom: 2.4rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.compare-features__row:first-child {
-    padding-bottom: 0;
-}
-
-.compare-features__row--header {
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 0.167rem;
-    font-weight: var(--font-weight-regular);
-    grid-template-columns: repeat(3, 1fr);
-    padding-top: 1.2rem;
-}
-
-.compare-features__row:not(.compare-features__row--header):not(:first-child) {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.compare-features__cell {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.compare-features__row--header .compare-features__cell {
-    justify-content: flex-start;
-}
-
-.compare-features__cell--feature {
-    justify-content: flex-start;
-    font-weight: var(--font-weight-bold);
+.compare-features__feature-name {
     font-size: 1.2rem;
+    font-weight: var(--font-weight-bold);
     letter-spacing: 0.2rem;
     text-transform: uppercase;
-    white-space: nowrap;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
 }
 
-@media (max-width: 768px) {
-    .compare-features__row {
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-    }
+.compare-features__plan-names {
+    display: flex;
+    justify-content: space-between;
 }
 
-@media (max-width: 480px) {
+.compare-features__plan {
+    width: 33.33%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.167rem;
+    text-align: center;
+}
+
+.compare-features__checkmarks {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 2rem;
+}
+
+.compare-features__checkmark {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+}
+
+.compare-features__checkmark img {
+    width: 1.6rem;
+    height: auto;
+}
+
+/* Desktop view */
+@media screen and (min-width: 768px) {
     .compare-features {
-        padding: var(--spacing-xl) var(--spacing-md);
+        position: relative;
+        padding-top: 10rem;
     }
 
-    .compare-features__title {
-        margin-bottom: var(--spacing-lg);
+    .compare-features::before {
+        content: 'COMPARE';
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 3.2rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
     }
 
-    .compare-features__row {
-        grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
+    .compare-features__table {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-column-gap: 8rem;
+        border-collapse: collapse;
     }
 
-    .compare-features__cell--feature {
-        font-size: 1.2rem;
-        letter-spacing: 0.2rem;
+    .compare-features__feature {
+        display: contents;
     }
-}
 
-.compare-features__row:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) .compare-features__cell--feature {
-    margin-top: var(--spacing-lg);
+    .compare-features__feature-name {
+        grid-column: 1;
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        padding: 2rem 0;
+        margin: 0;
+    }
+
+    .compare-features__plan-names {
+        display: none;
+    }
+
+    .compare-features__checkmarks {
+        display: contents;
+    }
+
+    .compare-features__checkmark {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        padding: 2rem 0;
+    }
 }
 
 /*=======================
@@ -1555,14 +1571,13 @@ h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
 }
 
 .cta__content {
     position: relative;
     z-index: 2;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
 }
