@@ -228,9 +228,83 @@
     }
 
     /* Grid Layouts */
-    .pricing-grid,
     .feature-grid {
         composes: grid grid--2-col;
+    }
+
+    /* Pricing Grid Tablet Adjustments */
+    .pricing-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        padding: 0 2.4rem;
+    }
+
+    .plan-card {
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 4rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header price"
+            "cta cta";
+        text-align: left;
+        min-height: auto;
+        align-items: center;
+    }
+
+    .plan-card__header {
+        grid-area: header;
+        margin-bottom: 0;
+    }
+
+    .plan-card__price {
+        grid-area: price;
+        text-align: right;
+        margin-bottom: 0;
+    }
+
+    .plan-card__cta {
+        grid-area: cta;
+        margin-top: 3.2rem;
+        width: 50%;
+    }
+
+    .plan-card__title {
+        font-size: 2.4rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .plan-card__description {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    .plan-card__amount {
+        font-size: 4rem;
+        line-height: 4.8rem;
+        letter-spacing: 4.17px;
+        margin-bottom: 0.8rem;
+    }
+
+    .plan-card--pro {
+        position: relative;
+        background-color: var(--color-black);
+        color: var(--color-white);
+    }
+
+    .plan-card--pro::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.6rem;
+        height: 100%;
+        background: var(--gradient-accent);
+        z-index: 2;
     }
 
     /* Hero Tablet Adjustments */
@@ -425,6 +499,73 @@
     /* Pricing Section */
     .pricing-plans {
         padding: var(--spacing-xxl) var(--spacing-xl);
+    }
+
+    /* Compare Features Tablet Adjustments - Match Desktop */
+    .compare-features {
+        padding: 8rem 4rem;
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* Add COMPARE title at the top */
+    .compare-features::before {
+        content: 'COMPARE';
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 3.2rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+    }
+
+    .compare-features__title {
+        margin-top: 8rem;
+        margin-bottom: 4rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        padding-bottom: 2rem;
+    }
+
+    .compare-features__table {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-column-gap: 4rem;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    /* Hide all header rows in tablet view except the main one */
+    .compare-features__row--header {
+        display: none;
+    }
+
+    .compare-features__row--main-header {
+        display: contents;
+    }
+
+    .compare-features__cell {
+        padding: 1.6rem 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        font-size: 1.2rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    .compare-features__cell--feature {
+        text-align: left;
+        grid-column: 1;
+    }
+
+    .compare-features__cell img {
+        width: 1.8rem;
+        height: auto;
     }
 
     /* CTA Section */
@@ -874,4 +1015,160 @@
         background: var(--gradient-accent);
         z-index: 5;
     }
+
+    /* Pricing Grid Landscape Adjustments */
+    .pricing-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        padding: 0 2.4rem;
+    }
+
+    /* Compare Features Landscape Adjustments - Match Desktop */
+    .compare-features {
+        padding: 8rem 4rem;
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* Add COMPARE title at the top */
+    .compare-features::before {
+        content: 'COMPARE';
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 3.2rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+    }
+
+    .compare-features__title {
+        margin-top: 8rem;
+        margin-bottom: 4rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        padding-bottom: 2rem;
+    }
+
+    .compare-features__table {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-column-gap: 4rem;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .compare-features__row {
+        display: contents;
+    }
+
+    /* Hide all header rows in tablet view except the main one */
+    .compare-features__row--header {
+        display: none;
+    }
+
+    .compare-features__row--main-header {
+        display: contents;
+    }
+
+    .compare-features__cell {
+        padding: 1.6rem 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        font-size: 1.2rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    .compare-features__cell--feature {
+        text-align: left;
+        grid-column: 1;
+    }
+
+    .compare-features__cell img {
+        width: 1.8rem;
+        height: auto;
+    }
+
+    /* Plan card */
+    .plan-card {
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 4rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "header price"
+            "cta cta";
+        text-align: left;
+        min-height: auto;
+        align-items: center;
+    }
+
+    .plan-card__header {
+        grid-area: header;
+        margin-bottom: 0;
+    }
+
+    .plan-card__price {
+        grid-area: price;
+        text-align: right;
+        margin-bottom: 0;
+    }
+
+    .plan-card__cta {
+        grid-area: cta;
+        margin-top: 3.2rem;
+        width: 50%;
+    }
+
+    .plan-card__title {
+        font-size: 2.4rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .plan-card__description {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    .plan-card__amount {
+        font-size: 4rem;
+        line-height: 4.8rem;
+        letter-spacing: 4.17px;
+        margin-bottom: 0.8rem;
+    }
+
+    .plan-card--pro {
+        position: relative;
+        background-color: var(--color-black);
+        color: var(--color-white);
+    }
+
+    .plan-card--pro::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.6rem;
+        height: 100%;
+        background: var(--gradient-accent);
+        z-index: 2;
+    }
+}
+
+/* Utility classes for tablet view */
+.desktop-only {
+    display: contents;
+}
+
+.mobile-only {
+    display: none;
 }
