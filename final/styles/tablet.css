@@ -96,6 +96,10 @@
         text-transform: uppercase;
     }
 
+    .nav__link:hover {
+        color: var(--color-hover-light);
+    }
+
     /* Override CTA styles for tablet */
     .nav__cta.btn.btn--primary,
     .nav__menu-cta {
