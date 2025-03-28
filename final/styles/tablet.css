@@ -1,0 +1,377 @@
+/* Tablet Styles (768px - 1024px) */
+@media screen and (min-width: 768px) {
+
+    /* Navigation Tablet Adjustments */
+    .nav__container {
+        padding: 1.6rem 4rem;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__menu {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        background-color: transparent;
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__menu-navigation {
+        display: flex;
+        gap: 3.2rem;
+        margin: 0;
+    }
+
+    .nav__menu-bottom {
+        display: none;
+    }
+
+    .nav__item {
+        margin: 0;
+    }
+
+    /* Override nav link styles for tablet */
+    .nav__link {
+        color: var(--color-black);
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Override CTA styles for tablet */
+    .nav__cta.btn.btn--primary,
+    .nav__menu-cta {
+        position: relative;
+        display: inline-block;
+        background-color: var(--color-black);
+        color: var(--color-white);
+        border: none;
+        text-transform: uppercase;
+        padding: 1.2rem 2.4rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+        transition: var(--transition-default);
+        overflow: hidden;
+    }
+
+    .nav__cta.btn.btn--primary::before,
+    .nav__menu-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-accent);
+        opacity: 0;
+        transition: var(--transition-default);
+        z-index: 1;
+    }
+
+    .nav__cta.btn.btn--primary span,
+    .nav__menu-cta span {
+        position: relative;
+        z-index: 2;
+        transition: var(--transition-default);
+        color: var(--color-white);
+    }
+
+    .nav__cta.btn.btn--primary:hover,
+    .nav__menu-cta:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: var(--box-shadow-hover);
+    }
+
+    .nav__cta.btn.btn--primary:hover::before,
+    .nav__menu-cta:hover::before {
+        opacity: 1;
+    }
+
+    /* Footer Tablet Adjustments */
+    .footer {
+        padding: 10rem 8rem;
+        background-color: var(--color-black);
+    }
+
+    .footer__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "logo . invite"
+            "links . ."
+            "social . copyright";
+        grid-column-gap: 3.2rem;
+        grid-row-gap: 0;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    .footer__brand {
+        grid-area: logo;
+        margin-bottom: 2rem;
+    }
+
+    .footer__links {
+        grid-area: links;
+        display: flex;
+        flex-direction: row;
+        gap: 2.8rem;
+        margin-bottom: 7.2rem;
+    }
+
+    .footer__link {
+        color: var(--color-white);
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 1.2rem;
+        transition: var(--transition-default);
+    }
+
+    .footer__link:hover {
+        opacity: 0.3;
+    }
+
+    .footer__social {
+        grid-area: social;
+        display: flex;
+        gap: 1.3rem;
+    }
+
+    .footer__social-link {
+        transition: var(--transition-default);
+    }
+
+    .footer__social-link:hover {
+        opacity: 0.3;
+    }
+
+    .footer__right {
+        display: contents;
+    }
+
+    .footer__right .btn.btn--primary {
+        grid-area: invite;
+        justify-self: end;
+    }
+
+    .footer__copyright {
+        grid-area: copyright;
+        color: var(--color-white);
+        opacity: 0.5;
+        justify-self: end;
+        white-space: nowrap;
+    }
+
+    /* Make footer__left divs use contents display to allow their children to be positioned by grid */
+    .footer__left {
+        display: contents;
+    }
+
+    /* Shared styles for main sections */
+    .hero,
+    .beautiful-stories,
+    .designed-for-everyone {
+        min-height: 60rem;
+    }
+
+    .hero {
+        flex-direction: row;
+        min-height: 65rem;
+    }
+
+    .beautiful-stories {
+        flex-direction: row;
+    }
+
+    .designed-for-everyone {
+        flex-direction: row-reverse;
+    }
+
+    .hero__image,
+    .beautiful-stories__image,
+    .designed-for-everyone__image {
+        width: 35.5%;
+        height: 100%;
+    }
+
+    .hero__image img,
+    .beautiful-stories__image img,
+    .designed-for-everyone__image img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero__content,
+    .beautiful-stories__content,
+    .designed-for-everyone__content {
+        width: 64.5%;
+        padding: 13.6rem 5.4rem;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Hero specific adjustments */
+    .hero__content {
+        padding: 17.3rem 5.4rem;
+    }
+
+    .hero__content::before {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0.6rem;
+    }
+
+    /* Shared title styles */
+    .hero__title,
+    .beautiful-stories__title,
+    .designed-for-everyone__title {
+        font-size: 4rem;
+        margin-bottom: 2.1rem;
+        max-width: 38.7rem;
+    }
+
+    /* Shared text styles */
+    .hero__text,
+    .beautiful-stories__text,
+    .designed-for-everyone__text {
+        margin-bottom: 4.8rem;
+        max-width: 38.7rem;
+        opacity: 0.6;
+    }
+
+    /* Stories Grid */
+    .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0;
+    }
+
+    .story-card {
+        height: 50rem;
+        position: relative;
+    }
+
+    .story-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .story-card__content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 4rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        color: var(--color-white);
+    }
+
+    .story-card__title {
+        margin-bottom: 0.4rem;
+    }
+
+    .story-card__author {
+        margin-bottom: 1.6rem;
+        opacity: 0.75;
+    }
+
+    .story-card__link {
+        color: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+    }
+
+    /* Features Section */
+    .features {
+        padding: 12rem 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 7.2rem;
+    }
+
+    .feature-item {
+        margin-bottom: 0;
+        padding: 0 3.2rem;
+        text-align: center;
+        max-width: 57rem;
+        margin: 0 auto;
+    }
+
+    .feature-item__icon {
+        margin-bottom: 4.8rem;
+    }
+
+    .feature-item__title {
+        margin-bottom: 1.6rem;
+    }
+
+    .feature-item__text {
+        opacity: 0.6;
+    }
+}
+
+/* Landscape orientation only */
+@media screen and (orientation: landscape) {
+
+    .hero,
+    .beautiful-stories,
+    .designed-for-everyone {
+        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .hero__content,
+    .beautiful-stories__content,
+    .designed-for-everyone__content {
+        padding: 4rem;
+        width: 55%;
+        justify-content: center;
+    }
+
+    .hero__image,
+    .beautiful-stories__image,
+    .designed-for-everyone__image {
+        width: 45%;
+        height: 100vh;
+        position: relative;
+    }
+
+    .hero__image picture,
+    .beautiful-stories__image picture,
+    .designed-for-everyone__image picture {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .hero__image img,
+    .beautiful-stories__image img,
+    .designed-for-everyone__image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
