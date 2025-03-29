@@ -266,26 +266,13 @@
     /* Compare Features Desktop */
     .compare-features {
         padding: 16rem 16.5rem;
+        position: relative;
     }
 
-    .compare-features__table {
-        max-width: 73rem;
-        margin: 0 auto;
-    }
-
-    .compare-features__header {
-        gap: 4rem;
-    }
-
-    .compare-features__row {
-        gap: 4rem;
-    }
-
-    /* Add COMPARE title at the top */
     .compare-features::before {
         content: 'COMPARE';
         position: absolute;
-        top: 8rem;
+        top: 6rem;
         left: 0;
         right: 0;
         text-align: center;
@@ -293,55 +280,102 @@
         font-weight: var(--font-weight-bold);
         letter-spacing: 0.4rem;
         text-transform: uppercase;
-    }
-
-    .compare-features__title {
-        margin-top: 10rem;
-        margin-bottom: 5.6rem;
-        text-align: left;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        padding-bottom: 2.3rem;
+        margin-bottom: 4rem;
     }
 
     .compare-features__table {
+        max-width: 110rem;
+        margin: 0 auto;
+        margin-top: 10rem;
+    }
+
+    .compare-features__header {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        grid-column-gap: 8rem;
-        border-collapse: collapse;
-        width: 100%;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        padding-bottom: 2.3rem;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.25);
     }
 
-    .compare-features__feature-name {
-        width: max-content;
-    }
-
-    /* Hide all header rows in desktop view except the main one */
-    .compare-features__row--header {
-        display: none;
-    }
-
-    .compare-features__row--main-header {
-        display: contents;
-    }
-
-    .compare-features__cell {
-        padding: 2.4rem 0;
-        text-align: center;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    .compare-features__heading {
         font-size: 1.2rem;
-        font-weight: var(--font-weight-bold);
         letter-spacing: 0.2rem;
         text-transform: uppercase;
-    }
-
-    .compare-features__cell--feature {
-        text-align: left;
         grid-column: 1;
     }
 
-    .compare-features__cell img {
-        width: 1.8rem;
-        height: auto;
+    .compare-features__plans-wrapper {
+        grid-column: 2 / span 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .compare-features__plan {
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        opacity: 0.5;
+        text-align: center;
+    }
+
+    .compare-features__rows {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2.3rem;
+    }
+
+    .compare-features__row {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        padding: 2.3rem 0;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.15);
+    }
+
+    .compare-features__feature {
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        grid-column: 1;
+    }
+
+    /* Hide the in-row plans in desktop view */
+    .compare-features__row .compare-features__plans {
+        display: none;
+    }
+
+    .compare-features__check-row {
+        display: contents;
+    }
+
+    .compare-features__check-container {
+        display: contents;
+    }
+
+    .compare-features__check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .compare-features__check:nth-child(1) {
+        grid-column: 2;
+    }
+
+    .compare-features__check:nth-child(2) {
+        grid-column: 3;
+    }
+
+    .compare-features__check:nth-child(3) {
+        grid-column: 4;
+    }
+
+    .compare-features__check::before {
+        display: none;
+    }
+
+    .compare-features__check img {
+        width: 2rem;
+        height: 2rem;
     }
 
     /* CTA Desktop Adjustments */
