@@ -18,12 +18,6 @@
         gap: 4rem;
     }
 
-    .nav__menu-navigation {
-        display: flex;
-        gap: 4rem;
-        margin: 0;
-    }
-
     .nav__item {
         margin: 0;
     }
