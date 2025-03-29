@@ -132,12 +132,26 @@ function initPricingToggle() {
 	}
 }
 
+// ==========================================================================
+// CURRENT YEAR FOR FOOTER
+// ==========================================================================
+
+// Function to update the current year in the footer
+function updateCurrentYear() {
+	const currentYearElement = document.getElementById('currentyear')
+	if (currentYearElement) {
+		currentYearElement.textContent = new Date().getFullYear()
+	}
+}
+
 // Initialize the application
 function init() {
 	console.log('Initializing mobile navigation...')
 	initMobileNavigation()
 	console.log('Initializing pricing toggle...')
 	initPricingToggle()
+	console.log('Updating footer year...')
+	updateCurrentYear()
 }
 
 // Run initialization when DOM is fully loaded
