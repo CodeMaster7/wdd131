@@ -38,6 +38,7 @@
 							<li class="nav__item">
 								<a href="pricing.html" class="nav__link nav__link--active">Pricing</a>
 							</li>
+							<li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
 						</div>
 						<div class="nav__menu-bottom">
 							<a href="#" class="nav__menu-cta"><span>GET AN INVITE</span></a>
@@ -68,6 +69,7 @@
 				<div class="pricing-toggle">
 					<span class="pricing-toggle__label pricing-toggle__label--active">Monthly</span>
 					<button class="pricing-toggle__button" aria-label="Toggle billing period" id="pricingToggle">
+						<input type="checkbox" id="billingToggle" />
 						<span class="pricing-toggle__slider"></span>
 					</button>
 					<span class="pricing-toggle__label">Yearly</span>
@@ -117,172 +119,137 @@
 				</div>
 			</section>
 			<section class="compare-features">
-				<h2 class="compare-features__title">THE FEATURES</h2>
+				<h2 class="compare-features__heading">THE FEATURES</h2>
 				<div class="compare-features__table">
-					<!-- Feature: UNLIMITED STORY POSTING -->
-					<div class="compare-features__feature">
-						<h3 class="compare-features__feature-name">UNLIMITED STORY POSTING</h3>
-						<div class="compare-features__plan-names">
-							<div class="compare-features__plan">BASIC</div>
-							<div class="compare-features__plan">PRO</div>
-							<div class="compare-features__plan">BUSINESS</div>
+					<div class="compare-features__row">
+						<div class="compare-features__feature">UNLIMITED STORY POSTING</div>
+						<div class="compare-features__plans">
+							<span class="compare-features__plan">BASIC</span>
+							<span class="compare-features__plan">PRO</span>
+							<span class="compare-features__plan">BUSINESS</span>
 						</div>
-						<div class="compare-features__checkmarks">
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+						<div class="compare-features__checks">
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
-							</div>
-						</div>
-					</div>
-
-					<!-- Feature: UNLIMITED PHOTO UPLOAD -->
-					<div class="compare-features__feature">
-						<h3 class="compare-features__feature-name">UNLIMITED PHOTO UPLOAD</h3>
-						<div class="compare-features__plan-names">
-							<div class="compare-features__plan">BASIC</div>
-							<div class="compare-features__plan">PRO</div>
-							<div class="compare-features__plan">BUSINESS</div>
-						</div>
-						<div class="compare-features__checkmarks">
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
-							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
-							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
 						</div>
 					</div>
-
-					<!-- Feature: EMBEDDING CUSTOM CONTENT -->
-					<div class="compare-features__feature">
-						<h3 class="compare-features__feature-name">EMBEDDING CUSTOM CONTENT</h3>
-						<div class="compare-features__plan-names">
-							<div class="compare-features__plan">BASIC</div>
-							<div class="compare-features__plan">PRO</div>
-							<div class="compare-features__plan">BUSINESS</div>
+					<div class="compare-features__row">
+						<div class="compare-features__feature">UNLIMITED PHOTO UPLOAD</div>
+						<div class="compare-features__plans">
+							<span class="compare-features__plan">BASIC</span>
+							<span class="compare-features__plan">PRO</span>
+							<span class="compare-features__plan">BUSINESS</span>
 						</div>
-						<div class="compare-features__checkmarks">
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for BASIC -->
+						<div class="compare-features__checks">
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
 						</div>
 					</div>
-
-					<!-- Feature: CUSTOMIZE METADATA -->
-					<div class="compare-features__feature">
-						<h3 class="compare-features__feature-name">CUSTOMIZE METADATA</h3>
-						<div class="compare-features__plan-names">
-							<div class="compare-features__plan">BASIC</div>
-							<div class="compare-features__plan">PRO</div>
-							<div class="compare-features__plan">BUSINESS</div>
+					<div class="compare-features__row">
+						<div class="compare-features__feature">EMBEDDING CUSTOM CONTENT</div>
+						<div class="compare-features__plans">
+							<span class="compare-features__plan">BASIC</span>
+							<span class="compare-features__plan">PRO</span>
+							<span class="compare-features__plan">BUSINESS</span>
 						</div>
-						<div class="compare-features__checkmarks">
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for BASIC -->
+						<div class="compare-features__checks">
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
-							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
 						</div>
 					</div>
-
-					<!-- Feature: ADVANCED METRICS -->
-					<div class="compare-features__feature">
-						<h3 class="compare-features__feature-name">ADVANCED METRICS</h3>
-						<div class="compare-features__plan-names">
-							<div class="compare-features__plan">BASIC</div>
-							<div class="compare-features__plan">PRO</div>
-							<div class="compare-features__plan">BUSINESS</div>
+					<div class="compare-features__row">
+						<div class="compare-features__feature">CUSTOMIZE METADATA</div>
+						<div class="compare-features__plans">
+							<span class="compare-features__plan">BASIC</span>
+							<span class="compare-features__plan">PRO</span>
+							<span class="compare-features__plan">BUSINESS</span>
 						</div>
-						<div class="compare-features__checkmarks">
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for BASIC -->
+						<div class="compare-features__checks">
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for PRO -->
-							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
 						</div>
 					</div>
-
-					<!-- Feature: PHOTO DOWNLOADS -->
-					<div class="compare-features__feature">
-						<h3 class="compare-features__feature-name">PHOTO DOWNLOADS</h3>
-						<div class="compare-features__plan-names">
-							<div class="compare-features__plan">BASIC</div>
-							<div class="compare-features__plan">PRO</div>
-							<div class="compare-features__plan">BUSINESS</div>
+					<div class="compare-features__row">
+						<div class="compare-features__feature">ADVANCED METRICS</div>
+						<div class="compare-features__plans">
+							<span class="compare-features__plan">BASIC</span>
+							<span class="compare-features__plan">PRO</span>
+							<span class="compare-features__plan">BUSINESS</span>
 						</div>
-						<div class="compare-features__checkmarks">
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for BASIC -->
-							</div>
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for PRO -->
-							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+						<div class="compare-features__checks">
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
 						</div>
 					</div>
-
-					<!-- Feature: SEARCH ENGINE INDEXING -->
-					<div class="compare-features__feature">
-						<h3 class="compare-features__feature-name">SEARCH ENGINE INDEXING</h3>
-						<div class="compare-features__plan-names">
-							<div class="compare-features__plan">BASIC</div>
-							<div class="compare-features__plan">PRO</div>
-							<div class="compare-features__plan">BUSINESS</div>
+					<div class="compare-features__row">
+						<div class="compare-features__feature">PHOTO DOWNLOADS</div>
+						<div class="compare-features__plans">
+							<span class="compare-features__plan">BASIC</span>
+							<span class="compare-features__plan">PRO</span>
+							<span class="compare-features__plan">BUSINESS</span>
 						</div>
-						<div class="compare-features__checkmarks">
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for BASIC -->
-							</div>
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for PRO -->
-							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+						<div class="compare-features__checks">
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
 						</div>
 					</div>
-
-					<!-- Feature: CUSTOM ANALYTICS -->
-					<div class="compare-features__feature">
-						<h3 class="compare-features__feature-name">CUSTOM ANALYTICS</h3>
-						<div class="compare-features__plan-names">
-							<div class="compare-features__plan">BASIC</div>
-							<div class="compare-features__plan">PRO</div>
-							<div class="compare-features__plan">BUSINESS</div>
+					<div class="compare-features__row">
+						<div class="compare-features__feature">SEARCH ENGINE INDEXING</div>
+						<div class="compare-features__plans">
+							<span class="compare-features__plan">BASIC</span>
+							<span class="compare-features__plan">PRO</span>
+							<span class="compare-features__plan">BUSINESS</span>
 						</div>
-						<div class="compare-features__checkmarks">
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for BASIC -->
+						<div class="compare-features__checks">
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
-							<div class="compare-features__checkmark">
-								<!-- No checkmark for PRO -->
-							</div>
-							<div class="compare-features__checkmark">
-								<img src="../images/pricing/desktop/check.svg" alt="Yes" />
+						</div>
+					</div>
+					<div class="compare-features__row">
+						<div class="compare-features__feature">CUSTOM ANALYTICS</div>
+						<div class="compare-features__plans">
+							<span class="compare-features__plan">BASIC</span>
+							<span class="compare-features__plan">PRO</span>
+							<span class="compare-features__plan">BUSINESS</span>
+						</div>
+						<div class="compare-features__checks">
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check"></div>
+							<div class="compare-features__check">
+								<img src="../images/pricing/desktop/check.svg" alt="Check" loading="lazy" />
 							</div>
 						</div>
 					</div>
@@ -339,6 +306,7 @@
 						<a href="stories.html" class="footer__link">Stories</a>
 						<a href="features.html" class="footer__link">Features</a>
 						<a href="pricing.html" class="footer__link">Pricing</a>
+						<a href="contact.html" class="footer__link">Contact</a>
 					</div>
 				</div>
 				<div class="footer__right">
