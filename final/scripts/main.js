@@ -113,16 +113,7 @@ function initPricingToggle() {
 	const yearlyLabel = toggle?.querySelector('.pricing-toggle__label:last-child')
 
 	if (toggle && toggleInput && monthlyLabel && yearlyLabel) {
-		// Add click event to the button itself
-		toggle.addEventListener('click', () => {
-			toggleInput.checked = !toggleInput.checked
-			updatePrices(toggleInput.checked)
-			// Update active label
-			monthlyLabel.classList.toggle('pricing-toggle__label--active', !toggleInput.checked)
-			yearlyLabel.classList.toggle('pricing-toggle__label--active', toggleInput.checked)
-		})
-
-		// Also keep the change event for the checkbox
+		// Change event for the checkbox
 		toggleInput.addEventListener('change', (e) => {
 			updatePrices(e.target.checked)
 			// Update active label
