@@ -2,7 +2,7 @@
 // MOBILE NAVIGATION TOGGLE
 // ==========================================================================
 
-// DOM Elements
+// Global DOM elements for navigation
 let navToggle, navMenu, menuIcon, closeIcon
 
 // Function to handle mobile menu toggle
@@ -25,10 +25,8 @@ function toggleMobileMenu() {
 	}
 }
 
-// Initialize the application
-function init() {
-	console.log('Initializing mobile navigation...')
-
+// Initialize mobile navigation
+function initMobileNavigation() {
 	// Get DOM elements
 	navToggle = document.querySelector('.nav__toggle')
 	navMenu = document.querySelector('.nav__menu')
@@ -63,6 +61,14 @@ function init() {
 		if (!menuIcon) console.error('Missing: .menu-icon')
 		if (!closeIcon) console.error('Missing: .close-icon')
 	}
+}
+
+// Initialize the application
+function init() {
+	console.log('Initializing mobile navigation...')
+	initMobileNavigation()
+
+	// Other initialization tasks could go here
 }
 
 // Run initialization when DOM is fully loaded
