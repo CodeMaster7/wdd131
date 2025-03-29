@@ -1186,14 +1186,21 @@ h6 {
     color: var(--color-black);
     opacity: 0.5;
     transition: var(--transition-default);
+    cursor: pointer;
 }
 
 .pricing-toggle__label--active {
     opacity: 1;
 }
 
+.pricing-toggle__container {
+    display: flex;
+    align-items: center;
+}
+
 .pricing-toggle__button {
     position: relative;
+    display: block;
     width: 6.4rem;
     height: 3.2rem;
     background-color: var(--color-black);
@@ -1201,14 +1208,6 @@ h6 {
     border-radius: 1.6rem;
     cursor: pointer;
     padding: 0.4rem;
-}
-
-/* Hide the checkbox but keep it accessible */
-.pricing-toggle__button input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
 }
 
 .pricing-toggle__slider {
@@ -1222,8 +1221,7 @@ h6 {
     transition: var(--transition-default);
 }
 
-/* Remove hover effect and add checked state */
-.pricing-toggle__button input[type="checkbox"]:checked+.pricing-toggle__slider {
+#billingToggle:checked ~ .pricing-toggle__button .pricing-toggle__slider {
     transform: translateX(3.2rem);
 }
 
