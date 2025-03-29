@@ -515,27 +515,120 @@
         padding: var(--spacing-xxl) var(--spacing-xl);
     }
 
-    /* Compare Features Tablet Adjustments - Match Desktop */
+    /* Compare Features Tablet Adjustments */
     .compare-features {
         padding: 11.2rem 4rem;
+        position: relative;
     }
 
-    .compare-features__heading {
-        font-size: 4rem;
-        margin-bottom: 5.6rem;
+    .compare-features::before {
+        content: 'COMPARE';
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 3.2rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
     }
 
     .compare-features__table {
-        max-width: 73rem;
+        max-width: 68.9rem;
         margin: 0 auto;
+        margin-top: 8rem;
     }
 
     .compare-features__header {
-        gap: 3.2rem;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        padding-bottom: 2.3rem;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.25);
+    }
+
+    .compare-features__heading {
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        grid-column: 1;
+    }
+
+    .compare-features__plans-wrapper {
+        grid-column: 2 / span 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .compare-features__plan {
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        opacity: 0.5;
+        text-align: center;
+    }
+
+    .compare-features__rows {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2.3rem;
     }
 
     .compare-features__row {
-        gap: 3.2rem;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        padding: 2.3rem 0;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.15);
+    }
+
+    .compare-features__feature {
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+        grid-column: 1;
+    }
+
+    /* Hide the in-row plans in tablet view */
+    .compare-features__row .compare-features__plans {
+        display: none;
+    }
+
+    .compare-features__check-row {
+        display: contents;
+    }
+
+    .compare-features__check-container {
+        display: contents;
+    }
+
+    .compare-features__check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .compare-features__check:nth-child(1) {
+        grid-column: 2;
+    }
+
+    .compare-features__check:nth-child(2) {
+        grid-column: 3;
+    }
+
+    .compare-features__check:nth-child(3) {
+        grid-column: 4;
+    }
+
+    .compare-features__check::before {
+        display: none;
+    }
+
+    .compare-features__check img {
+        width: 2rem;
+        height: 2rem;
     }
 
     /* Features and Pricing Header Tablet Adjustments */
@@ -666,575 +759,574 @@
         padding: 1.4rem 3.2rem;
         font-size: 1.2rem;
     }
-}
 
+    /* Landscape orientation only */
+    @media screen and (orientation: landscape) {
 
-/* Landscape orientation only */
-@media screen and (orientation: landscape) {
+        /* Navigation styles for landscape */
+        .nav__container {
+            padding: 1.6rem 3.2rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
 
-    /* Navigation styles for landscape */
-    .nav__container {
-        padding: 1.6rem 3.2rem;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        .nav__logo {
+            margin-right: 3.2rem;
+            flex-shrink: 0;
+        }
+
+        .nav__toggle {
+            display: none;
+        }
+
+        .nav__menu {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: 0;
+            background-color: transparent;
+            transform: translateX(0);
+            opacity: 1;
+            pointer-events: all;
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .nav__menu-navigation {
+            display: flex;
+            gap: 3.2rem;
+            margin: 0;
+        }
+
+        .nav__menu-bottom {
+            display: none;
+        }
+
+        .nav__item {
+            margin: 0;
+        }
+
+        .nav__cta {
+            margin-left: 3.2rem;
+        }
+
+        /* Override nav link styles for landscape */
+        .nav__link {
+            color: var(--color-black);
+            font-size: 1.2rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        /* Override CTA styles for landscape */
+        .nav__cta.btn.btn--primary,
+        .nav__menu-cta {
+            position: relative;
+            display: inline-block;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            border: none;
+            text-transform: uppercase;
+            padding: 1.2rem 2.4rem;
+            font-size: 1.2rem;
+            letter-spacing: 0.2rem;
+            transition: var(--transition-default);
+            overflow: hidden;
+        }
+
+        .nav__cta.btn.btn--primary::before,
+        .nav__menu-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: var(--transition-default);
+            z-index: 1;
+        }
+
+        .nav__cta.btn.btn--primary span,
+        .nav__menu-cta span {
+            position: relative;
+            z-index: 2;
+            transition: var(--transition-default);
+            color: var(--color-white);
+        }
+
+        .nav__cta.btn.btn--primary:hover,
+        .nav__menu-cta:hover {
+            transform: translateY(-0.3rem);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .nav__cta.btn.btn--primary:hover::before,
+        .nav__menu-cta:hover::before {
+            opacity: 1;
+        }
+
+        /* Header content before element adjustments for all pages in landscape */
+        .features-header__content::before,
+        .pricing-header__content::before,
+        .cta__content::before {
+            top: 0;
+            left: 0;
+            width: 0.6rem;
+            height: 100%;
+            transform: none;
+        }
+
+        /* Hero section landscape */
+        .hero {
+            flex-direction: row;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero__content {
+            order: 1;
+            width: 50%;
+            padding: 4rem;
+            justify-content: center;
+        }
+
+        .hero__image {
+            order: 2;
+            width: 50%;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Beautiful Stories section landscape */
+        .beautiful-stories {
+            flex-direction: row;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .beautiful-stories__content {
+            width: 50%;
+            padding: 4rem;
+            justify-content: center;
+        }
+
+        .beautiful-stories__image {
+            width: 50%;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Designed for Everyone section landscape */
+        .designed-for-everyone {
+            flex-direction: row-reverse;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .designed-for-everyone__content {
+            width: 50%;
+            padding: 4rem;
+            justify-content: center;
+        }
+
+        .designed-for-everyone__image {
+            width: 50%;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Image handling for all sections */
+        .hero__image picture,
+        .beautiful-stories__image picture,
+        .designed-for-everyone__image picture {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .hero__image img,
+        .beautiful-stories__image img,
+        .designed-for-everyone__image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Featured story adjustments for landscape */
+        .featured-story {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .featured-story__image {
+            width: 50%;
+            height: 100%;
+            position: relative;
+        }
+
+        .featured-story__content {
+            width: 50%;
+            position: relative;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--color-black);
+        }
+
+        /* Stories grid in landscape */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 0;
+        }
+
+        /* Ensure story cards scale properly in landscape */
+        .story-card {
+            min-height: 40rem;
+        }
+
+        /* Footer adjustments for landscape */
+        .footer {
+            padding: 10rem 8rem;
+            background-color: var(--color-black);
+        }
+
+        .footer__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto 1fr;
+            grid-template-areas:
+                "logo . invite"
+                "links . ."
+                "social . copyright";
+            grid-column-gap: 3.2rem;
+            grid-row-gap: 0;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .footer__brand {
+            grid-area: logo;
+            margin-bottom: 2rem;
+        }
+
+        .footer__links {
+            grid-area: links;
+            display: flex;
+            flex-direction: row;
+            gap: 2.8rem;
+            margin-bottom: 7.2rem;
+        }
+
+        .footer__social {
+            grid-area: social;
+            display: flex;
+            gap: 1.3rem;
+        }
+
+        .footer__right {
+            display: contents;
+        }
+
+        .footer__right .btn.btn--primary {
+            grid-area: invite;
+            justify-self: end;
+        }
+
+        .footer__copyright {
+            grid-area: copyright;
+            color: var(--color-white);
+            opacity: 0.5;
+            justify-self: end;
+            white-space: nowrap;
+        }
+
+        /* Make footer__left divs use contents display to allow their children to be positioned by grid */
+        .footer__left {
+            display: contents;
+        }
+
+        /* Features and Pricing Header landscape */
+        .features-header,
+        .pricing-header {
+            flex-direction: row;
+            min-height: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .features-header__image,
+        .pricing-header__image {
+            order: 2;
+            width: 50%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .features-header__content,
+        .pricing-header__content {
+            order: 1;
+            width: 50%;
+            padding: 4rem;
+            justify-content: center;
+        }
+
+        /* Add the ::before styling for the features-header to match hero section */
+        .features-header__content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.6rem;
+            height: 100%;
+            transform: none;
+            background: var(--gradient-accent);
+            z-index: 2;
+        }
+
+        /* Add image styles for features and pricing headers to match hero */
+        .features-header__image picture,
+        .pricing-header__image picture {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .features-header__image img,
+        .pricing-header__image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Features grid in landscape */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            padding: 6rem 4rem;
+        }
+
+        /* CTA adjustments for landscape */
+        .cta__title {
+            white-space: normal;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.6rem;
+            height: 100%;
+            transform: none;
+            background: var(--gradient-accent);
+            z-index: 5;
+        }
+
+        /* Pricing Grid Landscape Adjustments */
+        .pricing-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+            padding: 0 2.4rem;
+        }
+
+        /* Compare Features Landscape Adjustments - Match Desktop */
+        .compare-features {
+            padding: 8rem 4rem;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Add COMPARE title at the top */
+        .compare-features::before {
+            content: 'COMPARE';
+            position: absolute;
+            top: 4rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 3.2rem;
+            font-weight: var(--font-weight-bold);
+            letter-spacing: 0.4rem;
+            text-transform: uppercase;
+        }
+
+        .compare-features__title {
+            margin-top: 8rem;
+            margin-bottom: 4rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            padding-bottom: 2rem;
+        }
+
+        .compare-features__table {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-column-gap: 4rem;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .compare-features__row {
+            display: contents;
+        }
+
+        /* Hide all header rows in tablet view except the main one */
+        .compare-features__row--header {
+            display: none;
+        }
+
+        .compare-features__row--main-header {
+            display: contents;
+        }
+
+        .compare-features__cell {
+            padding: 1.6rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-bold);
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        .compare-features__cell--feature {
+            text-align: left;
+            grid-column: 1;
+        }
+
+        .compare-features__cell img {
+            width: 1.8rem;
+            height: auto;
+        }
+
+        /* Plan card */
+        .plan-card {
+            width: 100%;
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 4rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "header price"
+                "cta cta";
+            text-align: left;
+            min-height: auto;
+            align-items: center;
+        }
+
+        .plan-card__header {
+            grid-area: header;
+            margin-bottom: 0;
+        }
+
+        .plan-card__price {
+            grid-area: price;
+            text-align: right;
+            margin-bottom: 0;
+        }
+
+        .plan-card__cta {
+            grid-area: cta;
+            margin-top: 3.2rem;
+            width: 50%;
+        }
+
+        .plan-card__title {
+            font-size: 2.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .plan-card__description {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }
+
+        .plan-card__amount {
+            font-size: 4rem;
+            line-height: 4.8rem;
+            letter-spacing: 4.17px;
+            margin-bottom: 0.8rem;
+        }
+
+        .plan-card--pro {
+            position: relative;
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .plan-card--pro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0.6rem;
+            height: 100%;
+            background: var(--gradient-accent);
+            z-index: 2;
+        }
+
+        /* Thank You Page Landscape Styles */
+        .thank-you {
+            padding: var(--spacing-md) var(--spacing-lg);
+            min-height: calc(100vh - 16rem);
+            /* Slightly reduced for landscape */
+        }
+
+        .thank-you__container {
+            padding: var(--spacing-sm);
+        }
+
+        .thank-you__title {
+            font-size: 3.2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .thank-you__message {
+            font-size: 1.6rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .thank-you__btn {
+            padding: 1.2rem 2.4rem;
+        }
     }
 
-    .nav__logo {
-        margin-right: 3.2rem;
-        flex-shrink: 0;
+    /* Utility classes for tablet view */
+    .desktop-only {
+        display: contents;
     }
 
-    .nav__toggle {
+    .mobile-only {
         display: none;
     }
-
-    .nav__menu {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        background-color: transparent;
-        transform: translateX(0);
-        opacity: 1;
-        pointer-events: all;
-        display: flex;
-        align-items: center;
-        margin-right: auto;
-    }
-
-    .nav__menu-navigation {
-        display: flex;
-        gap: 3.2rem;
-        margin: 0;
-    }
-
-    .nav__menu-bottom {
-        display: none;
-    }
-
-    .nav__item {
-        margin: 0;
-    }
-
-    .nav__cta {
-        margin-left: 3.2rem;
-    }
-
-    /* Override nav link styles for landscape */
-    .nav__link {
-        color: var(--color-black);
-        font-size: 1.2rem;
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-    }
-
-    /* Override CTA styles for landscape */
-    .nav__cta.btn.btn--primary,
-    .nav__menu-cta {
-        position: relative;
-        display: inline-block;
-        background-color: var(--color-black);
-        color: var(--color-white);
-        border: none;
-        text-transform: uppercase;
-        padding: 1.2rem 2.4rem;
-        font-size: 1.2rem;
-        letter-spacing: 0.2rem;
-        transition: var(--transition-default);
-        overflow: hidden;
-    }
-
-    .nav__cta.btn.btn--primary::before,
-    .nav__menu-cta::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--gradient-accent);
-        opacity: 0;
-        transition: var(--transition-default);
-        z-index: 1;
-    }
-
-    .nav__cta.btn.btn--primary span,
-    .nav__menu-cta span {
-        position: relative;
-        z-index: 2;
-        transition: var(--transition-default);
-        color: var(--color-white);
-    }
-
-    .nav__cta.btn.btn--primary:hover,
-    .nav__menu-cta:hover {
-        transform: translateY(-0.3rem);
-        box-shadow: var(--box-shadow-hover);
-    }
-
-    .nav__cta.btn.btn--primary:hover::before,
-    .nav__menu-cta:hover::before {
-        opacity: 1;
-    }
-
-    /* Header content before element adjustments for all pages in landscape */
-    .features-header__content::before,
-    .pricing-header__content::before,
-    .cta__content::before {
-        top: 0;
-        left: 0;
-        width: 0.6rem;
-        height: 100%;
-        transform: none;
-    }
-
-    /* Hero section landscape */
-    .hero {
-        flex-direction: row;
-        min-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .hero__content {
-        order: 1;
-        width: 50%;
-        padding: 4rem;
-        justify-content: center;
-    }
-
-    .hero__image {
-        order: 2;
-        width: 50%;
-        height: 100vh;
-        position: relative;
-    }
-
-    /* Beautiful Stories section landscape */
-    .beautiful-stories {
-        flex-direction: row;
-        min-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .beautiful-stories__content {
-        width: 50%;
-        padding: 4rem;
-        justify-content: center;
-    }
-
-    .beautiful-stories__image {
-        width: 50%;
-        height: 100vh;
-        position: relative;
-    }
-
-    /* Designed for Everyone section landscape */
-    .designed-for-everyone {
-        flex-direction: row-reverse;
-        min-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .designed-for-everyone__content {
-        width: 50%;
-        padding: 4rem;
-        justify-content: center;
-    }
-
-    .designed-for-everyone__image {
-        width: 50%;
-        height: 100vh;
-        position: relative;
-    }
-
-    /* Image handling for all sections */
-    .hero__image picture,
-    .beautiful-stories__image picture,
-    .designed-for-everyone__image picture {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .hero__image img,
-    .beautiful-stories__image img,
-    .designed-for-everyone__image img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    /* Featured story adjustments for landscape */
-    .featured-story {
-        height: 100vh;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .featured-story__image {
-        width: 50%;
-        height: 100%;
-        position: relative;
-    }
-
-    .featured-story__content {
-        width: 50%;
-        position: relative;
-        padding: 4rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: var(--color-black);
-    }
-
-    /* Stories grid in landscape */
-    .stories-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        gap: 0;
-    }
-
-    /* Ensure story cards scale properly in landscape */
-    .story-card {
-        min-height: 40rem;
-    }
-
-    /* Footer adjustments for landscape */
-    .footer {
-        padding: 10rem 8rem;
-        background-color: var(--color-black);
-    }
-
-    .footer__container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto 1fr;
-        grid-template-areas:
-            "logo . invite"
-            "links . ."
-            "social . copyright";
-        grid-column-gap: 3.2rem;
-        grid-row-gap: 0;
-        max-width: var(--max-width);
-        margin: 0 auto;
-        align-items: start;
-    }
-
-    .footer__brand {
-        grid-area: logo;
-        margin-bottom: 2rem;
-    }
-
-    .footer__links {
-        grid-area: links;
-        display: flex;
-        flex-direction: row;
-        gap: 2.8rem;
-        margin-bottom: 7.2rem;
-    }
-
-    .footer__social {
-        grid-area: social;
-        display: flex;
-        gap: 1.3rem;
-    }
-
-    .footer__right {
-        display: contents;
-    }
-
-    .footer__right .btn.btn--primary {
-        grid-area: invite;
-        justify-self: end;
-    }
-
-    .footer__copyright {
-        grid-area: copyright;
-        color: var(--color-white);
-        opacity: 0.5;
-        justify-self: end;
-        white-space: nowrap;
-    }
-
-    /* Make footer__left divs use contents display to allow their children to be positioned by grid */
-    .footer__left {
-        display: contents;
-    }
-
-    /* Features and Pricing Header landscape */
-    .features-header,
-    .pricing-header {
-        flex-direction: row;
-        min-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .features-header__image,
-    .pricing-header__image {
-        order: 2;
-        width: 50%;
-        height: 100vh;
-        position: relative;
-    }
-
-    .features-header__content,
-    .pricing-header__content {
-        order: 1;
-        width: 50%;
-        padding: 4rem;
-        justify-content: center;
-    }
-
-    /* Add the ::before styling for the features-header to match hero section */
-    .features-header__content::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0.6rem;
-        height: 100%;
-        transform: none;
-        background: var(--gradient-accent);
-        z-index: 2;
-    }
-
-    /* Add image styles for features and pricing headers to match hero */
-    .features-header__image picture,
-    .pricing-header__image picture {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .features-header__image img,
-    .pricing-header__image img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    /* Features grid in landscape */
-    .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
-        padding: 6rem 4rem;
-    }
-
-    /* CTA adjustments for landscape */
-    .cta__title {
-        white-space: normal;
-        margin-bottom: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .cta::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0.6rem;
-        height: 100%;
-        transform: none;
-        background: var(--gradient-accent);
-        z-index: 5;
-    }
-
-    /* Pricing Grid Landscape Adjustments */
-    .pricing-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 2.4rem;
-        padding: 0 2.4rem;
-    }
-
-    /* Compare Features Landscape Adjustments - Match Desktop */
-    .compare-features {
-        padding: 8rem 4rem;
-        max-width: 100%;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    /* Add COMPARE title at the top */
-    .compare-features::before {
-        content: 'COMPARE';
-        position: absolute;
-        top: 4rem;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-size: 3.2rem;
-        font-weight: var(--font-weight-bold);
-        letter-spacing: 0.4rem;
-        text-transform: uppercase;
-    }
-
-    .compare-features__title {
-        margin-top: 8rem;
-        margin-bottom: 4rem;
-        text-align: left;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        padding-bottom: 2rem;
-    }
-
-    .compare-features__table {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        grid-column-gap: 4rem;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    .compare-features__row {
-        display: contents;
-    }
-
-    /* Hide all header rows in tablet view except the main one */
-    .compare-features__row--header {
-        display: none;
-    }
-
-    .compare-features__row--main-header {
-        display: contents;
-    }
-
-    .compare-features__cell {
-        padding: 1.6rem 0;
-        text-align: center;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        font-size: 1.2rem;
-        font-weight: var(--font-weight-bold);
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-    }
-
-    .compare-features__cell--feature {
-        text-align: left;
-        grid-column: 1;
-    }
-
-    .compare-features__cell img {
-        width: 1.8rem;
-        height: auto;
-    }
-
-    /* Plan card */
-    .plan-card {
-        width: 100%;
-        max-width: 80rem;
-        margin: 0 auto;
-        padding: 4rem;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "header price"
-            "cta cta";
-        text-align: left;
-        min-height: auto;
-        align-items: center;
-    }
-
-    .plan-card__header {
-        grid-area: header;
-        margin-bottom: 0;
-    }
-
-    .plan-card__price {
-        grid-area: price;
-        text-align: right;
-        margin-bottom: 0;
-    }
-
-    .plan-card__cta {
-        grid-area: cta;
-        margin-top: 3.2rem;
-        width: 50%;
-    }
-
-    .plan-card__title {
-        font-size: 2.4rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .plan-card__description {
-        font-size: 1.5rem;
-        line-height: 2.5rem;
-    }
-
-    .plan-card__amount {
-        font-size: 4rem;
-        line-height: 4.8rem;
-        letter-spacing: 4.17px;
-        margin-bottom: 0.8rem;
-    }
-
-    .plan-card--pro {
-        position: relative;
-        background-color: var(--color-black);
-        color: var(--color-white);
-    }
-
-    .plan-card--pro::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0.6rem;
-        height: 100%;
-        background: var(--gradient-accent);
-        z-index: 2;
-    }
-
-    /* Thank You Page Landscape Styles */
-    .thank-you {
-        padding: var(--spacing-md) var(--spacing-lg);
-        min-height: calc(100vh - 16rem);
-        /* Slightly reduced for landscape */
-    }
-
-    .thank-you__container {
-        padding: var(--spacing-sm);
-    }
-
-    .thank-you__title {
-        font-size: 3.2rem;
-        margin-bottom: var(--spacing-sm);
-    }
-
-    .thank-you__message {
-        font-size: 1.6rem;
-        margin-bottom: var(--spacing-md);
-    }
-
-    .thank-you__btn {
-        padding: 1.2rem 2.4rem;
-    }
-}
-
-/* Utility classes for tablet view */
-.desktop-only {
-    display: contents;
-}
-
-.mobile-only {
-    display: none;
 }
