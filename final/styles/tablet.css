@@ -231,11 +231,6 @@
         display: contents;
     }
 
-    /* Grid Layouts */
-    .feature-grid {
-        composes: grid grid--2-col;
-    }
-
     /* Pricing Grid Tablet Adjustments */
     .pricing-grid {
         display: flex;
