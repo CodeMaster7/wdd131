@@ -68,6 +68,19 @@
     transform: translateX(0.5rem);
 }
 
+/* Accessibility class for visually hiding elements but keeping them accessible for screen readers */
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
 /* Reset styles */
 * {
     margin: 0;
@@ -351,14 +364,6 @@ h6 {
     transition: var(--transition-default);
     z-index: 10;
     box-shadow: var(--box-shadow-menu);
-}
-
-.nav__menu-navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0;
 }
 
 .nav__menu.active {
