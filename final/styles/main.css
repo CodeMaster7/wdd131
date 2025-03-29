@@ -1370,28 +1370,25 @@ h6 {
 /* Compare Features */
 .compare-features {
     padding: 6.4rem 2.4rem;
-}
-
-.compare-features__heading {
-    font-size: 3.2rem;
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0.33rem;
-    text-transform: uppercase;
-    margin-bottom: 2.3rem;
-    text-align: left;
+    overflow-x: hidden;
 }
 
 .compare-features__table {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    overflow-x: auto;
+}
+
+.compare-features__header {
+    display: none;
 }
 
 .compare-features__row {
-    display: flex;
-    flex-direction: column;
-    padding: 2.3rem 0;
+    margin-bottom: 2.4rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 2.4rem;
+}
+
+.compare-features__row:last-child {
+    margin-bottom: 0;
 }
 
 .compare-features__feature {
@@ -1399,39 +1396,58 @@ h6 {
     font-weight: var(--font-weight-bold);
     letter-spacing: 0.2rem;
     text-transform: uppercase;
+    margin: 0;
     margin-bottom: 1.6rem;
-    color: var(--color-black);
+}
+
+.compare-features__plans-wrapper {
+    display: none;
+}
+
+.compare-features__check-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.compare-features__check-row::before {
+    content: '';
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
 }
 
 .compare-features__plans {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.6rem;
-    padding: 0 1rem;
 }
 
 .compare-features__plan {
     font-size: 1rem;
     font-weight: var(--font-weight-bold);
-    letter-spacing: 0.167rem;
+    letter-spacing: 0.17rem;
     text-transform: uppercase;
     color: var(--color-black);
     opacity: 0.5;
     width: 33.33%;
-    text-align: left;
+    text-align: center;
 }
 
-.compare-features__checks {
+.compare-features__check-container {
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem;
 }
 
 .compare-features__check {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 33.33%;
+}
+
+.compare-features__check::before {
+    display: none;
 }
 
 .compare-features__check img {
@@ -1456,7 +1472,7 @@ h6 {
         display: none;
     }
 
-    .compare-features__checks {
+    .compare-features__check-row {
         display: contents;
         padding: 0;
     }
