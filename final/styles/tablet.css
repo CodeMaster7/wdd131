@@ -54,7 +54,15 @@
 
     /* Navigation Tablet Adjustments */
     .nav__container {
-        padding: 1.6rem 4rem;
+        padding: 1.6rem 3.2rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .nav__logo {
+        flex-shrink: 0;
+        margin-right: 3.2rem;
     }
 
     .nav__toggle {
@@ -72,6 +80,7 @@
         pointer-events: all;
         display: flex;
         align-items: center;
+        margin-right: auto;
     }
 
     .nav__menu-navigation {
@@ -86,6 +95,10 @@
 
     .nav__item {
         margin: 0;
+    }
+
+    .nav__cta {
+        margin-left: 3.2rem;
     }
 
     /* Override nav link styles for tablet */
@@ -114,6 +127,8 @@
         letter-spacing: 0.2rem;
         transition: var(--transition-default);
         overflow: hidden;
+        min-width: 15.8rem;
+        text-align: center;
     }
 
     .nav__cta.btn.btn--primary::before,
@@ -502,104 +517,25 @@
 
     /* Compare Features Tablet Adjustments - Match Desktop */
     .compare-features {
-        padding: 8rem 4rem;
-        max-width: 100%;
-        margin: 0 auto;
-        position: relative;
+        padding: 11.2rem 4rem;
     }
 
-    /* Add COMPARE title at the top */
-    .compare-features::before {
-        content: 'COMPARE';
-        position: absolute;
-        top: 4rem;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-size: 3.2rem;
-        font-weight: var(--font-weight-bold);
-        letter-spacing: 0.4rem;
-        text-transform: uppercase;
-    }
-
-    .compare-features__title {
-        margin-top: 8rem;
-        margin-bottom: 4rem;
-        text-align: left;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        padding-bottom: 2rem;
+    .compare-features__heading {
+        font-size: 4rem;
+        margin-bottom: 5.6rem;
     }
 
     .compare-features__table {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        grid-column-gap: 4rem;
-        border-collapse: collapse;
-        width: 100%;
+        max-width: 73rem;
+        margin: 0 auto;
     }
 
-    /* Hide all header rows in tablet view except the main one */
-    .compare-features__row--header {
-        display: none;
+    .compare-features__header {
+        gap: 3.2rem;
     }
 
-    .compare-features__row--main-header {
-        display: contents;
-    }
-
-    .compare-features__cell {
-        padding: 1.6rem 0;
-        text-align: center;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        font-size: 1.2rem;
-        font-weight: var(--font-weight-bold);
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-    }
-
-    .compare-features__cell--feature {
-        text-align: left;
-        grid-column: 1;
-    }
-
-    .compare-features__cell img {
-        width: 1.8rem;
-        height: auto;
-    }
-
-    /* CTA Section */
-    .cta {
-        padding: var(--spacing-xxxl) var(--spacing-xxl);
-        position: relative;
-        background-color: var(--color-black);
-    }
-
-    .cta::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0.6rem;
-        height: 100%;
-        transform: none;
-        background: var(--gradient-accent);
-        z-index: 5;
-    }
-
-    .cta__content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-        align-items: center;
-        position: relative;
-    }
-
-    .cta__title {
-        margin-bottom: 0;
-        max-width: 60%;
-        white-space: normal;
-        display: flex;
-        flex-direction: column;
+    .compare-features__row {
+        gap: 3.2rem;
     }
 
     /* Features and Pricing Header Tablet Adjustments */
@@ -638,14 +574,115 @@
         max-width: 38.7rem;
         opacity: 0.6;
     }
+
+    /* Contact Page Tablet Adjustments */
+    .contact-header {
+        flex-direction: row;
+        height: 40rem;
+    }
+
+    .contact-header__content {
+        width: 60%;
+        order: 1;
+        padding: 6rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .contact-header__image {
+        width: 40%;
+        height: 100%;
+        order: 2;
+    }
+
+    .contact-header__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .contact-header__title {
+        font-size: 4rem;
+        margin-bottom: 2.1rem;
+    }
+
+    .contact-form {
+        padding: 6rem;
+    }
+
+    .contact-form__container {
+        max-width: 80rem;
+        margin: 0 auto;
+        gap: 6rem;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .form__group {
+        margin-bottom: 2rem;
+    }
+
+    .form button {
+        align-self: flex-start;
+    }
+
+    .thank-you {
+        padding: var(--spacing-xl) var(--spacing-xl);
+        min-height: calc(100vh - 45rem);
+        /* Account for header and footer */
+        display: flex;
+        align-items: center;
+    }
+
+    .thank-you__container {
+        max-width: 60rem;
+        padding: var(--spacing-lg);
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .thank-you__title {
+        font-size: 4rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .thank-you__message {
+        font-size: 1.8rem;
+        margin-bottom: var(--spacing-lg);
+        max-width: 45rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .thank-you__btn {
+        padding: 1.4rem 3.2rem;
+        font-size: 1.2rem;
+    }
 }
+
 
 /* Landscape orientation only */
 @media screen and (orientation: landscape) {
 
     /* Navigation styles for landscape */
     .nav__container {
-        padding: 1.6rem 4rem;
+        padding: 1.6rem 3.2rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .nav__logo {
+        margin-right: 3.2rem;
+        flex-shrink: 0;
     }
 
     .nav__toggle {
@@ -663,6 +700,7 @@
         pointer-events: all;
         display: flex;
         align-items: center;
+        margin-right: auto;
     }
 
     .nav__menu-navigation {
@@ -677,6 +715,10 @@
 
     .nav__item {
         margin: 0;
+    }
+
+    .nav__cta {
+        margin-left: 3.2rem;
     }
 
     /* Override nav link styles for landscape */
@@ -1160,6 +1202,31 @@
         height: 100%;
         background: var(--gradient-accent);
         z-index: 2;
+    }
+
+    /* Thank You Page Landscape Styles */
+    .thank-you {
+        padding: var(--spacing-md) var(--spacing-lg);
+        min-height: calc(100vh - 16rem);
+        /* Slightly reduced for landscape */
+    }
+
+    .thank-you__container {
+        padding: var(--spacing-sm);
+    }
+
+    .thank-you__title {
+        font-size: 3.2rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .thank-you__message {
+        font-size: 1.6rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .thank-you__btn {
+        padding: 1.2rem 2.4rem;
     }
 }
 
