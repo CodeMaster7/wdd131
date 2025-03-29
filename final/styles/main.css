@@ -196,26 +196,15 @@ h6 {
 
 /* Apply grid layouts */
 .pricing-grid {
-    composes: grid grid--1-col;
     gap: var(--spacing-lg);
 }
 
 .feature-grid {
-    composes: grid grid--1-col;
     padding: var(--spacing-xxl) var(--spacing-lg);
 }
 
 .stories-grid {
-    composes: grid grid--1-col;
     width: 100%;
-}
-
-@media screen and (min-width: 1024px) {
-
-    .pricing-grid,
-    .feature-grid {
-        composes: grid grid--3-col;
-    }
 }
 
 /*=======================
@@ -262,13 +251,6 @@ h6 {
 
 .btn:hover .btn__arrow {
     transform: translateX(0.5rem);
-}
-
-/* Remove duplicate button styles from components */
-.hero .btn--primary,
-.cta .btn--primary,
-.footer__right .btn--primary {
-    composes: btn--primary;
 }
 
 /*=======================
@@ -843,7 +825,6 @@ h6 {
 =      STORIES PAGE    =
 ========================*/
 .stories-grid {
-    composes: grid grid--1-col;
     width: 100%;
 }
 
@@ -908,7 +889,6 @@ h6 {
 }
 
 .feature-grid {
-    composes: grid grid--1-col;
     padding: var(--spacing-xxl) var(--spacing-lg);
 }
 
@@ -953,20 +933,9 @@ h6 {
         order: 1;
         width: 50%;
     }
-
-    .feature-grid {
-        composes: grid grid--2-col;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .feature-grid {
-        composes: grid grid--3-col;
-    }
 }
 
 .stories-grid {
-    composes: grid grid--1-col;
     width: 100%;
 }
 
@@ -1245,7 +1214,6 @@ h6 {
 }
 
 .pricing-grid {
-    composes: grid grid--1-col;
     gap: var(--spacing-lg);
 }
 
