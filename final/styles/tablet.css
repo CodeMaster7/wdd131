@@ -120,7 +120,7 @@
         padding: 1.2rem 2.4rem;
         font-size: 1.2rem;
         letter-spacing: 0.2rem;
-        transition: var(--transition-default);
+        transition: all 0.3s ease;
         overflow: hidden;
         min-width: 15.8rem;
         text-align: center;
@@ -136,7 +136,7 @@
         height: 100%;
         background: var(--gradient-accent);
         opacity: 0;
-        transition: var(--transition-default);
+        transition: all 0.3s ease;
         z-index: 1;
     }
 
@@ -144,14 +144,14 @@
     .nav__menu-cta span {
         position: relative;
         z-index: 2;
-        transition: var(--transition-default);
+        transition: all 0.3s ease;
         color: var(--color-white);
     }
 
     .nav__cta.btn.btn--primary:hover,
     .nav__menu-cta:hover {
         transform: translateY(-0.3rem);
-        box-shadow: var(--box-shadow-hover);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     }
 
     .nav__cta.btn.btn--primary:hover::before,
@@ -827,8 +827,10 @@
             padding: 1.2rem 2.4rem;
             font-size: 1.2rem;
             letter-spacing: 0.2rem;
-            transition: var(--transition-default);
+            transition: all 0.3s ease;
             overflow: hidden;
+            min-width: 15.8rem;
+            text-align: center;
         }
 
         .nav__cta.btn.btn--primary::before,
@@ -841,7 +843,7 @@
             height: 100%;
             background: var(--gradient-accent);
             opacity: 0;
-            transition: var(--transition-default);
+            transition: all 0.3s ease;
             z-index: 1;
         }
 
@@ -849,14 +851,14 @@
         .nav__menu-cta span {
             position: relative;
             z-index: 2;
-            transition: var(--transition-default);
+            transition: all 0.3s ease;
             color: var(--color-white);
         }
 
         .nav__cta.btn.btn--primary:hover,
         .nav__menu-cta:hover {
             transform: translateY(-0.3rem);
-            box-shadow: var(--box-shadow-hover);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
         }
 
         .nav__cta.btn.btn--primary:hover::before,
@@ -1368,6 +1370,12 @@
 
     .cta .btn__arrow {
         margin-left: 1.8rem;
-        transition: var(--transition-default);
+        transition: all 0.3s ease;
+    }
+
+    .cta__btn span {
+        position: relative;
+        z-index: 2;
+        transition: all 0.3s ease;
     }
 }
