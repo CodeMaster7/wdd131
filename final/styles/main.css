@@ -1488,22 +1488,8 @@ h6 {
 /* CTA section */
 .cta {
     position: relative;
-    width: 100%;
-    color: var(--color-white);
-    padding: var(--spacing-xl) var(--spacing-lg);
-    background-color: var(--color-black);
+    padding: 6.4rem 3.3rem;
     overflow: hidden;
-}
-
-.cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 1.5rem;
-    width: 12.8rem;
-    height: 0.6rem;
-    background: var(--gradient-accent);
-    z-index: 2;
 }
 
 .cta__background {
@@ -1521,42 +1507,63 @@ h6 {
     object-fit: cover;
 }
 
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.6rem;
+    background: var(--gradient-accent);
+    z-index: 2;
+}
+
 .cta__content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
 }
 
 .cta__title {
     font-size: 3.2rem;
-    line-height: 4rem;
-    margin-bottom: var(--spacing-lg);
-    text-transform: uppercase;
-    letter-spacing: 0.33rem;
     font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    line-height: 1.2;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cta__title span {
+    display: block;
+    margin-bottom: 0.4rem;
 }
 
 .cta .btn--primary {
-    color: var(--color-white);
-    background-color: transparent;
     position: relative;
-    font-size: var(--font-size-small);
+    color: var(--color-white);
     text-transform: uppercase;
-    letter-spacing: var(--letter-spacing-button);
+    letter-spacing: 0.2rem;
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
     display: inline-flex;
     align-items: center;
-}
-
-.cta .btn--primary:hover {
-    color: var(--color-hover-light);
+    justify-content: flex-start;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
 }
 
 .cta .btn__arrow {
-    margin-left: var(--spacing-md);
+    margin-left: 1.8rem;
     transition: var(--transition-default);
+}
+
+.cta .btn--primary:hover {
+    transform: translateY(-0.3rem);
 }
 
 .cta .btn--primary:hover .btn__arrow {
