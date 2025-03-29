@@ -16,7 +16,6 @@
         display: flex;
         align-items: center;
         gap: 4rem;
-        margin-left: auto;
     }
 
     .nav__menu-navigation {
@@ -30,7 +29,39 @@
     }
 
     .nav__cta {
-        margin-left: 2rem;
+        padding: 1.4rem 2.4rem;
+        background-color: var(--color-black);
+        color: var(--color-white);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav__cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--gradient-accent);
+        opacity: 0;
+        transition: var(--transition-default);
+        z-index: 1;
+    }
+
+    .nav__cta span {
+        position: relative;
+        z-index: 2;
+    }
+
+    .nav__cta:hover {
+        color: var(--color-white);
+        transform: translateY(-0.3rem);
+        box-shadow: var(--box-shadow-hover);
+    }
+
+    .nav__cta:hover::before {
+        opacity: 1;
     }
 
     /* Hero Desktop Adjustments */
@@ -43,7 +74,6 @@
     .hero__image {
         order: 2;
         width: 56%;
-        height: 100%;
         position: relative;
     }
 
@@ -77,6 +107,7 @@
     .beautiful-stories__content {
         width: 44%;
         padding: 13.6rem 11.1rem;
+        padding-bottom: 0;
     }
 
     /* Designed for Everyone Desktop Adjustments */
@@ -94,6 +125,9 @@
     .designed-for-everyone__content {
         width: 44%;
         padding: 13.6rem 11.1rem;
+        padding-top: 0;
+        display: flex;
+        justify-content: flex-end;
     }
 
     /* Stories Grid Desktop */
@@ -293,7 +327,7 @@
         display: grid;
         grid-template-columns: 1.5fr 1fr 1fr 1fr;
         padding-bottom: 2.3rem;
-        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.25);
+        border-bottom: 0.3rem solid rgba(0, 0, 0, 0.829);
     }
 
     .compare-features__heading {
@@ -386,20 +420,125 @@
     }
 
     .cta__content {
+        display: flex;
+        flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        z-index: 3;
     }
 
     .cta__title {
+        font-size: 4rem;
+        font-weight: var(--font-weight-bold);
+        color: var(--color-white);
+        margin: 0;
         max-width: 40rem;
+    }
+
+    .cta__title span {
+        display: block;
+        line-height: 1.2;
+    }
+
+    .cta .btn--primary {
+        position: relative;
+        color: var(--color-white);
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 1.2rem;
+        padding: 1.2rem 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: transparent;
+        border: none;
+    }
+
+    .cta .btn__arrow {
+        margin-left: 1.8rem;
+        transition: var(--transition-default);
     }
 
     /* Footer Desktop Adjustments */
     .footer {
-        padding: 8.5rem 16.5rem;
+        padding: 10rem 16.5rem;
+        background-color: var(--color-black);
     }
 
     .footer__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "logo . invite"
+            "links . ."
+            "social . copyright";
         grid-column-gap: 10rem;
+        grid-row-gap: 0;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    .footer__brand {
+        grid-area: logo;
+        margin-bottom: 2rem;
+    }
+
+    .footer__links {
+        grid-area: links;
+        display: flex;
+        flex-direction: row;
+        gap: 2.8rem;
+        margin-bottom: 7.2rem;
+    }
+
+    .footer__link {
+        color: var(--color-white);
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 1.2rem;
+        transition: var(--transition-default);
+    }
+
+    .footer__link:hover {
+        opacity: 0.3;
+    }
+
+    .footer__social {
+        grid-area: social;
+        display: flex;
+        gap: 1.3rem;
+    }
+
+    .footer__social-link {
+        transition: var(--transition-default);
+    }
+
+    .footer__social-link:hover {
+        opacity: 0.3;
+    }
+
+    .footer__right {
+        display: contents;
+    }
+
+    .footer__right .btn.btn--primary {
+        grid-area: invite;
+        justify-self: end;
+    }
+
+    .footer__copyright {
+        grid-area: copyright;
+        color: var(--color-white);
+        opacity: 0.5;
+        justify-self: end;
+        white-space: nowrap;
+    }
+
+    /* Make footer__left divs use contents display to allow their children to be positioned by grid */
+    .footer__left {
+        display: contents;
     }
 
     /* Contact Page Desktop Adjustments */
