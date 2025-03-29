@@ -63,12 +63,81 @@ function initMobileNavigation() {
 	}
 }
 
+// ==========================================================================
+// PRICING TOGGLE FUNCTIONALITY
+// ==========================================================================
+
+// Pricing data object
+const pricingData = {
+	basic: {
+		monthly: 19,
+		yearly: 190
+	},
+	pro: {
+		monthly: 39,
+		yearly: 390
+	},
+	business: {
+		monthly: 99,
+		yearly: 990
+	}
+}
+
+// Function to update prices
+function updatePrices(isYearly) {
+	const prices = document.querySelectorAll('.plan-card__price')
+	const periods = document.querySelectorAll('.plan-card__period')
+
+	prices.forEach((price) => {
+		const plan = price.closest('.plan-card').classList.contains('plan-card--basic')
+			? 'basic'
+			: price.closest('.plan-card').classList.contains('plan-card--pro')
+			? 'pro'
+			: 'business'
+
+		const newPrice = isYearly ? pricingData[plan].yearly : pricingData[plan].monthly
+		// Update the price amount
+		price.querySelector('.plan-card__amount').textContent = `$${newPrice}`
+	})
+
+	periods.forEach((period) => {
+		period.textContent = isYearly ? 'per year' : 'per month'
+	})
+}
+
+// Function to handle pricing toggle
+function initPricingToggle() {
+	const toggle = document.querySelector('.pricing-toggle')
+	const toggleInput = toggle?.querySelector('input[type="checkbox"]')
+	const monthlyLabel = toggle?.querySelector('.pricing-toggle__label:first-child')
+	const yearlyLabel = toggle?.querySelector('.pricing-toggle__label:last-child')
+
+	if (toggle && toggleInput && monthlyLabel && yearlyLabel) {
+		// Add click event to the button itself
+		toggle.addEventListener('click', () => {
+			toggleInput.checked = !toggleInput.checked
+			updatePrices(toggleInput.checked)
+			// Update active label
+			monthlyLabel.classList.toggle('pricing-toggle__label--active', !toggleInput.checked)
+			yearlyLabel.classList.toggle('pricing-toggle__label--active', toggleInput.checked)
+		})
+
+		// Also keep the change event for the checkbox
+		toggleInput.addEventListener('change', (e) => {
+			updatePrices(e.target.checked)
+			// Update active label
+			monthlyLabel.classList.toggle('pricing-toggle__label--active', !e.target.checked)
+			yearlyLabel.classList.toggle('pricing-toggle__label--active', e.target.checked)
+		})
+	}
+}
+
 // Initialize the application
 function init() {
 	console.log('Initializing mobile navigation...')
 	initMobileNavigation()
-
-	// Other initialization tasks could go here
+	console.log('Initializing pricing toggle...')
+	initPricingToggle()
 }
 
 // Run initialization when DOM is fully loaded
